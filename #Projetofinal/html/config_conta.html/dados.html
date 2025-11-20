@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Dados - TechMoon</title>
+  <link rel="stylesheet" href="/css/config_conta.css/dados.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div id="logo"><a href="/html/layout.html">Tech<span class="destaque">Moon</span></a></div>
+      <div class="barra-box">
+        <input type="text" placeholder="Pesquisar...">
+        <a class="btn-pesquisa">
+          <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/html/nav/login.html">Login</a></li>
+          <li><a href="/html/nav/conta.html">Conta</a></li>
+          <li><a href="/html/nav/carrinho.html"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="menu-secundario">
+    <hr>
+    <div class="container">
+      <ul>
+        <li><a href="/html/nav2.html/teclado.html">Teclados</a></li>
+        <li><a href="/html/nav2.html/mouse.html">Mouses</a></li>
+        <li><a href="/html/nav2.html/headset.html">Headsets</a></li>
+        <li><a href="/html/nav2.html/acessorio.html">Acessórios</a></li>
+        <li><a href="/html/nav2.html/ofertas.html">Ofertas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/html/nav/conta.html"><i class="fas fa-arrow-left"></i> Voltar para Conta</a>
+      </div>
+      
+      <div class="page-header">
+        <h1><i class="fas fa-user-edit"></i> Meus Dados</h1>
+      </div>
+
+      <div class="dados-container">
+        <div class="form-section">
+          <h2><i class="fas fa-user"></i> Informações Pessoais</h2>
+          <form class="dados-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" value="João Silva Santos" required>
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" value="joao.silva@email.com" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" value="(61) 99999-9999">
+              </div>
+              <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" value="123.456.789-00" readonly>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nascimento">Data de Nascimento</label>
+                <input type="date" id="nascimento" value="1990-01-01">
+              </div>
+              <div class="form-group">
+                <label for="genero">Gênero</label>
+                <select id="genero">
+                  <option value="masculino">Masculino</option>
+                  <option value="feminino">Feminino</option>
+                  <option value="outro">Outro</option>
+                  <option value="nao-informar">Prefiro não informar</option>
+                </select>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn-salvar">
+              <i class="fas fa-save"></i> Salvar Alterações
+            </button>
+          </form>
+        </div>
+
+        <div class="form-section">
+          <h2><i class="fas fa-lock"></i> Segurança</h2>
+          <form class="senha-form">
+            <div class="form-group">
+              <label for="senha-atual">Senha Atual</label>
+              <input type="password" id="senha-atual" placeholder="Digite sua senha atual">
+            </div>
+            
+            <div class="form-group">
+              <label for="nova-senha">Nova Senha</label>
+              <input type="password" id="nova-senha" placeholder="Digite a nova senha">
+            </div>
+            
+            <div class="form-group">
+              <label for="confirmar-senha">Confirmar Nova Senha</label>
+              <input type="password" id="confirmar-senha" placeholder="Confirme a nova senha">
+            </div>
+            
+            <button type="submit" class="btn-alterar-senha">
+              <i class="fas fa-key"></i> Alterar Senha
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+   <footer>
+    <div class="container">
+      <div class="conteudo-rodape">
+        <!-- Sobre a Empresa -->
+        <div class="secao-rodape">
+          <h4>Tech<span class="destaque">Moon</span></h4>
+          <p>Sua loja especializada em tecnologia e periféricos de alta qualidade.</p>
+          <div class="icones-sociais">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook fa-bounce"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram fa-bounce"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter fa-bounce"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube fa-bounce"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in fa-bounce"></i></a>
+          </div>
+        </div>
+
+        <!-- Links Úteis -->
+        <div class="secao-rodape">
+          <h4>Links Úteis</h4>
+          <ul>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="#">Trocas e Devoluções</a></li>
+            <li><a href="#">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Contato -->
+        <div class="secao-rodape">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-envelope"></i> contato@techmoon.com.br</li>
+            <li><i class="fas fa-phone"></i> (61) 3333-4444</li>
+            <li><i class="fas fa-map-marker-alt"></i> Brasília - DF</li>
+            <li><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="rodape-inferior">
+        <p>&copy; 2024 TechMoon. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
