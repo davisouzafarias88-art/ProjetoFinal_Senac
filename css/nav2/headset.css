@@ -16,7 +16,7 @@
   
   /* Tamanhos */
   --largura-maxima: 1200px;
-  --tamanho-cartao: 300px;
+  
   
   /* Transições */
   --transicao-rapida: 0.2s ease;
@@ -32,7 +32,6 @@
   /* Cores de texto */
   --texto-primario: #ffffff;
   --texto-secundario: #e0e0e0;
-  --texto-suave: #b0b0b0;
 }
 
 * {
