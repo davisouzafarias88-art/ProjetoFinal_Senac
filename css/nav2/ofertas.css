@@ -326,8 +326,7 @@ section {
   object-fit: contain;
   border-radius: 6px;
   margin-bottom: var(--espaco-pequeno);
-  background-color: var(--fundo-cinza-claro);
-  padding: var(--espaco-pequeno);
+  background-color: transparent;  padding: var(--espaco-pequeno);
 }
 
 .item h3 {

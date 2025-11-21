@@ -292,6 +292,7 @@ section {
   background: linear-gradient(135deg, rgba(79, 15, 104, 0.428) 0%, rgba(183, 0, 255, 0.05) 100%);
   border-radius: 12px;
   max-width: 900px;
+  margin-top: var(--espaco-extra-grande);
   margin-left: auto;
   margin-right: auto;
   border: 1px solid rgba(183, 0, 255, 0.2);
@@ -400,12 +401,14 @@ section {
    ITENS
    ============================================ */
 .item {
-  background: var(--fundo-cinza-claro);
+      background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+
   color: var(--texto-branco);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+   border: 3px solid #542075;
   border-radius: 19px;
   padding: var(--espaco-medio);
   cursor: pointer;
@@ -424,7 +427,7 @@ section {
   object-fit: contain;
   border-radius: 6px;
   margin-bottom: var(--espaco-pequeno);
-  background-color: var(--fundo-cinza-claro);
+  background-color: transparent;
   padding: var(--espaco-pequeno);
 }
 

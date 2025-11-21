@@ -166,20 +166,20 @@ main {
   padding: var(--espaco-grande) 0;
 }
 
-.breadcrumb {
+.navegacao {
   position: sticky;
   top: 90px;
   margin-bottom: 20px;
 }
 
-.breadcrumb a {
+.navegacao a {
   color: #b700ff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
-.breadcrumb a:hover {
+.navegacao a:hover {
   color: #9010c3;
 }
 

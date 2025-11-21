@@ -335,7 +335,7 @@ section {
     object-fit: contain;
     border-radius: 6px;
     margin-bottom: var(--espaco-pequeno);
-    background-color: var(--fundo-cinza-claro);
+    background-color: transparent;
     padding: var(--espaco-pequeno);
   }
   

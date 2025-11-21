@@ -1,76 +1,68 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const inputBusca = document.querySelector('.barra-box input');
-  const btnBusca = document.querySelector('.btn-pesquisa');
+// Busca que funciona em todas as páginas
+window.addEventListener('load', function() {
+  const input = document.querySelector('.barra-box input');
+  const btn = document.querySelector('.btn-pesquisa');
   
-  function buscarProdutos() {
-    const termo = inputBusca.value.toLowerCase().trim();
+  if (!input || !btn) return;
+  
+  function buscar() {
+    const termo = input.value.toLowerCase().trim();
+    const produtos = document.querySelectorAll('.item');
     
-    if (termo === '') {
-      mostrarTodosProdutos();
+    if (!termo) {
+      // Mostrar todos os produtos
+      produtos.forEach(produto => {
+        produto.style.display = 'flex';
+        produto.style.border = '';
+        produto.style.boxShadow = '';
+      });
       return;
     }
     
-    const produtos = document.querySelectorAll('.item');
-    let encontrados = 0;
-    
+    let encontrou = false;
     produtos.forEach(produto => {
       const nome = produto.querySelector('h3').textContent.toLowerCase();
-      
       if (nome.includes(termo)) {
         produto.style.display = 'flex';
-        encontrados++;
+        if (!encontrou) {
+          // Destacar o primeiro encontrado
+          produto.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          produto.style.border = '3px solid #b700ff';
+          produto.style.boxShadow = '0 0 20px rgba(183, 0, 255, 0.5)';
+          setTimeout(() => {
+            produto.style.border = '';
+            produto.style.boxShadow = '';
+          }, 3000);
+          encontrou = true;
+        }
       } else {
         produto.style.display = 'none';
       }
     });
     
-    if (encontrados === 0) {
-      mostrarMensagemNaoEncontrado();
-    } else {
-      removerMensagemNaoEncontrado();
+    if (!encontrou) {
+      alert('Produto não encontrado!');
+      // Mostrar todos novamente
+      produtos.forEach(produto => produto.style.display = 'flex');
     }
   }
   
-  function mostrarTodosProdutos() {
+  // Filtro em tempo real
+  function filtrar() {
+    const termo = input.value.toLowerCase().trim();
     const produtos = document.querySelectorAll('.item');
-    produtos.forEach(produto => {
-      produto.style.display = 'flex';
-    });
-    removerMensagemNaoEncontrado();
-  }
-  
-  function mostrarMensagemNaoEncontrado() {
-    removerMensagemNaoEncontrado();
     
-    const gradeItens = document.getElementById('grade-itens');
-    const mensagem = document.createElement('div');
-    mensagem.id = 'mensagem-nao-encontrado';
-    mensagem.innerHTML = `
-      <div style="text-align: center; color: white; padding: 50px;">
-        <h2>Nenhum produto encontrado</h2>
-        <p>Tente buscar por outro termo</p>
-      </div>
-    `;
-    gradeItens.appendChild(mensagem);
+    produtos.forEach(produto => {
+      const nome = produto.querySelector('h3').textContent.toLowerCase();
+      produto.style.display = nome.includes(termo) ? 'flex' : 'none';
+    });
   }
   
-  function removerMensagemNaoEncontrado() {
-    const mensagem = document.getElementById('mensagem-nao-encontrado');
-    if (mensagem) {
-      mensagem.remove();
-    }
-  }
-  
-  // Buscar ao digitar
-  inputBusca.addEventListener('input', buscarProdutos);
-  
-  // Buscar ao clicar no botão
-  btnBusca.addEventListener('click', buscarProdutos);
-  
-  // Buscar ao pressionar Enter
-  inputBusca.addEventListener('keypress', function(e) {
+  input.addEventListener('input', filtrar);
+  btn.addEventListener('click', buscar);
+  input.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
-      buscarProdutos();
+      buscar();
     }
   });
 });
