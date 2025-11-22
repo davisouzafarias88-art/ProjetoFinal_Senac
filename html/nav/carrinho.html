@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho - TechMoon</title>
-    <link rel="stylesheet" href="/css/nav/carrinho.css">
+    <link rel="stylesheet" href="../../css/nav/carrinho.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
@@ -20,9 +20,9 @@
 
       <div class="barra-box">
           <input type="text" placeholder="Pesquisar...">
-          <a class="btn-pesquisa">   
-            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
-        </a>
+          <a class="botao-pesquisa">   
+      <i class="fa-solid fa-magnifying-glass"></i>   
+    </a>
   
         </div>
   
@@ -68,7 +68,7 @@
             
             <div id="total-carrinho" style="display: none;">
                 <h3>Total: R$ <span id="valor-total">0,00</span></h3>
-                <button class="btn-finalizar" onclick="window.location.href='/html/nav/pagamento.html'">Finalizar Compra</button>
+                <button class="botao-finalizar" onclick="window.location.href='/html/nav/pag.pagamento.html'">Finalizar Compra</button>
             </div>
         </div>        
             
@@ -148,7 +148,7 @@
                 <h3>${produto.nome}</h3>
                 <p class="preco">R$ ${produto.preco.replace('.', ',')}</p>
               </div>
-              <button class="btn-remover" onclick="removerItem(${index})">Remover</button>
+              <button class="botao-remover" onclick="removerItem(${index})">Remover</button>
             </div>
           `;
         });

@@ -201,8 +201,8 @@ const produtos = {
 
 // Função para carregar produto da URL
 function carregarProduto() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const nomeProduto = urlParams.get('produto');
+    const parametrosUrl = new URLSearchParams(window.location.search);
+    const nomeProduto = parametrosUrl.get('produto');
     
     if (nomeProduto && produtos[nomeProduto]) {
         const produto = produtos[nomeProduto];
@@ -239,8 +239,8 @@ function carregarProduto() {
         });
         
         // Configurar botão de adicionar ao carrinho
-        const btnAdicionar = document.getElementById('btn-adicionar');
-        btnAdicionar.addEventListener('click', function() {
+        const botaoAdicionar = document.getElementById('botao-adicionar');
+        botaoAdicionar.addEventListener('click', function() {
             const quantidade = document.getElementById('quantidade').value;
             adicionarAoCarrinho(produto, quantidade);
         });
@@ -270,14 +270,14 @@ function adicionarAoCarrinho(produto, quantidade) {
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
     
     // Feedback visual
-    const btn = document.getElementById('btn-adicionar');
-    const textoOriginal = btn.textContent;
-    btn.textContent = 'Adicionado!';
-    btn.style.backgroundColor = '#28a745';
+    const botao = document.getElementById('botao-adicionar');
+    const textoOriginal = botao.textContent;
+    botao.textContent = 'Adicionado!';
+    botao.classList.add('produto-adicionado');
     
     setTimeout(() => {
-        btn.textContent = textoOriginal;
-        btn.style.backgroundColor = '#00d4ff';
+        botao.textContent = textoOriginal;
+        botao.classList.remove('produto-adicionado');
     }, 2000);
 }
 

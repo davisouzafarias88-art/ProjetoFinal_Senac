@@ -16,12 +16,9 @@
   
   /* Tamanhos */
   --largura-maxima: 1200px;
- 
-  
-
   
   /* Transições */
-  --transicao-rapida: 0.2s ease;
+  --transicao-rapida: 0.9s ease;
   --transicao-normal: 0.3s ease;
   
   /* Fontes */
@@ -114,57 +111,59 @@ header .container {
   color: #b700ff; /* Roxo */
 }
 /* ============================================
-   BARRA DE PESQUISA — CORRIGIDA
-   ============================================ */
+ BARRA DE PESQUISA — CORRIGIDA
+ ============================================ */
 
 /* Caixa da barra */
 .barra-box {
-  margin-left: auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 45px;               /* começa pequena com só o ícone */
-  height: 40px;
-  border: 2px solid white;   /* linhas brancas */
-  background: transparent;
-  border-radius: 30px;
-  overflow: visible;
-  transition: width 0.4s ease;
+margin-left: auto;
+position: relative;
+display: flex;
+align-items: center;
+width: 45px;               /* começa pequena com só o ícone */
+height: 40px;
+border: 2px solid white;   /* linhas brancas */
+background: transparent;
+border-radius: 30px;
+overflow: hidden;
+transition: width 0.4s ease;
 }
 
 /* Input escondido inicialmente */
 .barra-box input {
-  width: 100%;
-  height: 100%;              /* corrigido: antes estava quebrado */
-  border: none;  
-  padding: 0 50px 0 15px;    /* espaço para o ícone */
-  background: transparent;
-  font-size: 16px;
-  outline: none;
-  color: white;
-  opacity: 0;                /* some enquanto fechado */
-  transition: opacity 0.3s ease;
+width: 100%;
+height: 100%;              /* corrigido: antes estava quebrado */
+border: none;  
+padding: 0 50px 0 15px;    /* espaço para o ícone */
+background: transparent;
+font-size: 16px;
+outline: none;
+color: white;
+opacity: 0;                /* some enquanto fechado */
+transition: opacity 0.3s ease;
 }
 
 /* Ícone da lupa */
-.btn-pesquisa {
-  margin-right: 2px;
-  position: absolute;
-  right: 10px;
-  cursor: pointer;
-  color: white;
-  z-index: 2;
+.botao-pesquisa {
+margin-right: 2px;
+position: absolute;
+right: 10px;
+cursor: pointer;
+color: white;
+z-index: 2;
 }
 
 /* Expande ao passar o mouse */
 .barra-box:hover {
-  width: 350px;              /* tamanho expandido */
+width: 350px;              /* tamanho expandido */
 }
 
 /* Mostra o input ao expandir */
 .barra-box:hover input {
-  opacity: 1;
+opacity: 1;
 }
+
+
 
 /* Navegação */
 nav {
@@ -206,7 +205,8 @@ nav a:hover {
 }
 
 .fa-shopping-cart:hover {
-  color: #000;
+        color: #000;
+  background-color:white;
   transform: scale(1.1);
  
 }
@@ -272,6 +272,12 @@ main .container {
  
 }
 
+/* ============================================
+   SECTION
+   ============================================ */
+section {
+  width: 100%;
+}
 
 /* ============================================
    SEÇÃO DE BOAS-VINDAS
@@ -384,7 +390,8 @@ main .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--espaco-medio);
-  max-width: var(--largura-maxima);
+  max-width: 1400px;
+ 
   margin: 0 auto;
   padding: 0 var(--espaco-medio);
   }
@@ -453,7 +460,7 @@ main .container {
 }
 
 /* Botão do carrinho */
-.btn-carrinho {
+.botao-carrinho {
   background: linear-gradient(135deg, #b700ff 0%, #9010c3 100%);
   color: white;
   border: none;
@@ -476,17 +483,17 @@ main .container {
   box-shadow: 0 4px 15px rgba(183, 0, 255, 0.3);
 }
 
-.btn-carrinho:hover {
+.botao-carrinho:hover {
   background: linear-gradient(135deg, #9010c3 0%, #7a0d9e 100%);
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 8px 25px rgba(183, 0, 255, 0.5);
 }
 
-.btn-carrinho:hover::before {
+.botao-carrinho:hover::before {
   left: 100%;
 }
 
-.btn-carrinho:active {
+.botao-carrinho:active {
   transform: translateY(-1px) scale(0.98);
   transition: all 0.1s;
 }
@@ -639,7 +646,10 @@ footer .container {
   }
   
   nav.menu-secundario ul {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
     gap: 8px;
   }
   
@@ -709,7 +719,7 @@ footer .container {
     font-size: 1rem;
   }
   
-  .btn-carrinho {
+  .botao-carrinho {
     padding: 10px 15px;
     font-size: 0.9rem;
   }

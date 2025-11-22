@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Adicionar evento de clique no item inteiro
         item.addEventListener('click', function(e) {
             // Verificar se o clique não foi no botão de adicionar ao carrinho
-            if (!e.target.classList.contains('btn-carrinho')) {
+            if (!e.target.classList.contains('botao-carrinho')) {
                 const nomeProduto = this.getAttribute('data-nome');
                 if (nomeProduto) {
                     navegarParaProduto(nomeProduto);

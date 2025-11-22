@@ -1,7 +1,7 @@
 // Busca que funciona
 window.addEventListener('load', function() {
   const input = document.querySelector('.barra-box input');
-  const btn = document.querySelector('.btn-pesquisa');
+  const botaoPesquisa = document.querySelector('.botao-pesquisa');
   
   function buscar() {
     const termo = input.value.toLowerCase().trim();
@@ -29,7 +29,7 @@ window.addEventListener('load', function() {
     }
   }
   
-  btn.addEventListener('click', buscar);
+  botaoPesquisa.addEventListener('click', buscar);
   input.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
       buscar();

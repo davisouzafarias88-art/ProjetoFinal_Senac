@@ -146,7 +146,7 @@
 }
 
 /* Ícone da lupa */
-.btn-pesquisa {
+.botao-pesquisa {
   margin-right: 2px;
   position: absolute;
   right: 10px;
@@ -341,7 +341,7 @@ section {
   font-size: 1.2rem;
 }
 
-.btn-remover {
+.botao-remover {
   background: #ff4757;
   color: white;
   border: none;
@@ -351,7 +351,7 @@ section {
   transition: background 0.3s;
 }
 
-.btn-remover:hover {
+.botao-remover:hover {
   background: #ff3742;
 }
 
@@ -362,7 +362,7 @@ section {
   border-radius: 12px;
 }
 
-.btn-finalizar {
+.botao-finalizar {
   background: linear-gradient(135deg, #b700ff 0%, #9010c3 100%);
   color: white;
   border: none;
@@ -375,7 +375,7 @@ section {
   transition: all 0.3s;
 }
 
-.btn-finalizar:hover {
+.botao-finalizar:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(183, 0, 255, 0.5);
 }

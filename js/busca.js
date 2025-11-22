@@ -1,9 +1,10 @@
 // Busca que funciona em todas as páginas
 window.addEventListener('load', function() {
   const input = document.querySelector('.barra-box input');
-  const btn = document.querySelector('.btn-pesquisa');
+    const botaoPesquisa = document.querySelector('.botao-pesquisa');
   
   if (!input || !btn) return;
+    if (!input || !botaoPesquisa) return;
   
   function buscar() {
     const termo = input.value.toLowerCase().trim();
@@ -59,7 +60,7 @@ window.addEventListener('load', function() {
   }
   
   input.addEventListener('input', filtrar);
-  btn.addEventListener('click', buscar);
+    botaoPesquisa.addEventListener('click', buscar);
   input.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
       buscar();

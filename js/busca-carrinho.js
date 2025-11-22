@@ -1,7 +1,7 @@
 // Busca no carrinho
 setTimeout(() => {
   const input = document.querySelector('.barra-box input');
-  const btn = document.querySelector('.btn-pesquisa');
+  const botaoPesquisa = document.querySelector('.botao-pesquisa');
   
   function buscar() {
     const termo = input.value.toLowerCase();
@@ -14,6 +14,6 @@ setTimeout(() => {
   }
   
   input.oninput = buscar;
-  btn.onclick = buscar;
+  botaoPesquisa.onclick = buscar;
   input.onkeypress = (e) => e.key === 'Enter' && buscar();
 }, 500);

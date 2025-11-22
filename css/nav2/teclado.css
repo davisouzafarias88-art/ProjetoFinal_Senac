@@ -17,9 +17,6 @@
     /* Tamanhos */
     --largura-maxima: 1200px;
     
-    
-
-    
     /* Transições */
     --transicao-rapida: 0.9s ease;
     --transicao-normal: 0.3s ease;
@@ -147,7 +144,7 @@
 }
 
 /* Ícone da lupa */
-.btn-pesquisa {
+.botao-pesquisa {
   margin-right: 2px;
   position: absolute;
   right: 10px;
@@ -369,7 +366,7 @@ section {
     color: #ffffff;
   }
   /* Botão do carrinho */
-.btn-carrinho {
+.botao-carrinho {
   background: linear-gradient(135deg, #b700ff 0%, #9010c3 100%);
   color: white;
   border: none;
@@ -389,20 +386,16 @@ section {
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(183, 0, 255, 0.3);
-}
+  box-shadow: 0 4px 15px rgba(183, 0, 255, 0.3);}
 
-.btn-carrinho:hover {
+.botao-carrinho:hover {
   background: linear-gradient(135deg, #9010c3 0%, #7a0d9e 100%);
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 8px 25px rgba(183, 0, 255, 0.5);
-}
-
-.btn-carrinho:hover::before {
-  left: 100%;
-}
-
-.btn-carrinho:active {
+ }
+.botao-carrinho:hover::before {
+  left: 100%;}
+.botao-carrinho:active {
   transform: translateY(-1px) scale(0.98);
   transition: all 0.1s;
 }
@@ -591,9 +584,7 @@ footer {
   
   .item h3 {
     font-size: 1rem;
-  }
-  
-  .btn-carrinho {
+    .botao-carrinho {
     padding: 10px 15px;
     font-size: 0.9rem;
   }
@@ -669,3 +660,4 @@ footer {
 
 
 
+}

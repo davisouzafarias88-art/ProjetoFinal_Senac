@@ -1,6 +1,6 @@
 // Adicionar ao carrinho
-document.querySelectorAll('.btn-carrinho').forEach(btn => {
-  btn.onclick = function() {
+document.querySelectorAll('.botao-carrinho').forEach(botao => {
+  botao.onclick = function() {
     const item = this.closest('.item');
     const produto = {
       nome: item.dataset.nome,

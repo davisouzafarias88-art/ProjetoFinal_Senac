@@ -68,15 +68,16 @@ header .container {
 }
 
 .barra-box {
+  margin-left: auto;
   position: relative;
   display: flex;
   align-items: center;
-  width: 45px;
+  width: 45px;               /* começa pequena com só o ícone */
   height: 40px;
-  border: 2px solid white;
+  border: 2px solid white;   /* linhas brancas */
   background: transparent;
   border-radius: 30px;
-  overflow: visible;
+  overflow: hidden;
   transition: width 0.4s ease;
 }
 
@@ -93,7 +94,8 @@ header .container {
   transition: opacity 0.3s ease;
 }
 
-.btn-pesquisa {
+.botao-pesquisa {
+  margin-right: 2px;
   position: absolute;
   right: 10px;
   cursor: pointer;
@@ -330,7 +332,7 @@ main {
   color: #b700ff;
 }
 
-.btn-finalizar {
+.botao-finalizar {
   width: 100%;
   padding: 15px;
   background: linear-gradient(135deg, #b700ff 0%, #9010c3 100%);
@@ -344,7 +346,7 @@ main {
   transition: all 0.3s;
 }
 
-.btn-finalizar:hover {
+.botao-finalizar:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(183, 0, 255, 0.5);
 }
