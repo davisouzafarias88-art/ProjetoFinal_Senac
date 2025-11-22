@@ -419,17 +419,6 @@ section {
   color: white !important;
 }
 
-.btn-oferta:hover {
-  background: linear-gradient(135deg, #ff3742 0%, #c44569 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 71, 87, 0.5);
-}
-
-.btn-oferta:hover i {
-  transform: none !important;
-  color: currentColor !important;
-}
-
 footer {
   background: var(--fundo-cinza);
   color: var(--texto-branco);
@@ -691,6 +680,3 @@ footer .container {
     justify-content: center;
   }
 }
-
-
-
