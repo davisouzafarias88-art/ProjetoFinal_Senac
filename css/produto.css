@@ -6,7 +6,118 @@
 
 /* Estilos específicos do produto já estão no produto-detalhes.css */
 
-
+:root {
+    /* Cores de fundo */
+    --fundo-escuro: #000;
+    --fundo-cinza: #333;
+    --fundo-cinza-claro: #737373;
+    --fundo-lateral: #ddd;
+    --texto-branco: #fff;
+    --texto-claro: #e0e0e0;
+    
+    /* Espaçamentos */
+    --espaco-pequeno: 10px;
+    --espaco-pequeno-plus: 15px;
+    --espaco-medio: 20px;
+    --espaco-grande: 25px;
+    --espaco-extra-grande: 50px;
+    
+    /* Tamanhos */
+    --largura-maxima: 1200px;
+    
+    /* Transições */
+    --transicao-rapida: 0.9s ease;
+    --transicao-normal: 0.3s ease;
+    
+    /* Fontes */
+    --familia-fonte: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fonte-base: 1rem;
+    --fonte-grande: 1.1rem;
+    --fonte-extra-grande: 1.5rem;
+    --fonte-gigante: 2rem;
+    
+    /* Cores de texto */
+    --texto-primario: #ffffff;
+    --texto-secundario: #e0e0e0;
+    --texto-suave: #b0b0b0;
+  }
+  
+  /* ============================================
+     RESET E BASE
+     ============================================ */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--familia-fonte);
+    font-size: var(--fonte-base);
+    line-height: 1.7;
+    color: var(--texto-primario);
+    background-color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* ============================================
+     CONTAINER CENTRAL
+     ============================================ */
+  .container {
+    width: 100%;
+    max-width: var(--largura-maxima);
+    margin: 0 auto;
+    display: flex;
+    gap: var(--espaco-medio);
+    padding: 0 var(--espaco-medio);
+  }
+  
+  /* ============================================
+     HEADER
+     ============================================ */
+  header {
+    background: var(--fundo-escuro);
+    color: var(--texto-branco);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--espaco-medio);
+    gap: var(--espaco-medio);
+  }
+  
+  /* Logo */
+  #logo a {
+    color: var(--texto-branco);
+    text-decoration: none;
+    font-size: var(--fonte-gigante);
+    font-weight: bold;
+    flex-shrink: 0;
+    transition: opacity var(--transicao-rapida);
+  }
+  
+  #logo a:hover 
+  {
+    opacity: 0.8;
+    outline: 2px solid var(--texto-branco);
+    outline-offset: 4px;
+  }
+  
+  /* Destaca parte do texto */
+  #logo a .destaque {
+    
+    color: #b700ff; /* Roxo */
+  }
 
 
 
