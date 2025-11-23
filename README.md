@@ -137,10 +137,6 @@ O **TechMoon** é um e-commerce completo que oferece uma experiência de compra 
 
 ## 💻 Como Executar o Projeto
 
-### Pré-requisitos
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- Editor de código (opcional, para visualizar o código)
-
 ### Passos para Execução
 
 1. **Clone ou baixe o repositório**
@@ -186,9 +182,9 @@ Página Inicial (layout.html)
 
 ## 👥 Equipe de Desenvolvimento
 
-- **Desenvolvedor Principal**: Samuel
-- **Colaborador**: Davi Souza Farias
-- **Instituição**: SENAC DF
+- **Desenvolvedor Principal no css**: Samuel Gonçalves Dias
+- **Colaborador na Página de Login e Cadastro**: Davi Souza Farias
+- **Instituição**: SENAC DF (903 Sul)
 
 ## 📝 Licença
 
