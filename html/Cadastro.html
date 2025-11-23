@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Cadastro.css">
+    <title>Cadastre-se</title>
+</head>
+
+<body>
+
+    <main id="container">
+        <form>
+            <h1>Cadastro Tech<span id="moon">Moon</span></h1>
+
+            <div id="nome_cad">
+                <input placeholder="Nome" type="text" required>
+                <img src="/img/icon_usuario.png" alt="nome_cad" width="20px">
+            </div>
+
+            <div id="email_cad">
+                <input placeholder="Email" type="email" required>
+                <img src="/img/icon_email.png" alt="email_cad" width="20px">
+            </div>
+            
+            <div id="cpf">
+                <input placeholder="CPF" type="text" maxlength="14" required>
+                <img src="/img/icon_cpf.png" alt="cpf_cad" width="25px">
+
+            </div>
+
+            <div id="end">
+                <input placeholder="Endereço" type="text" required>
+                <img src="../img/icon_end.png" alt="end_icon" width="24px">
+
+            </div>
+
+            <div id="cidade">
+            <label for="Cidade">Selecione sua Cidade</label>
+            <select id="cidade_select" name="cidades">
+            <option value="Plano Piloto">Plano Piloto</option>
+            <option value="Taguatinga">Taguatinga</option>
+            <option value="Planaltina">Planaltina</option>
+            <option value="Paranoá">Paranoá</option>
+            <option value="Nucleo Bandeirante">Núcleo Bandeirante</option>
+            <option value="Ceilândia">Ceilândia</option>
+            <option value="Samambaia">Samambaia</option>
+            <option value="Cruzeiro">Cruzeiro</option>
+            </div>
+
+            </select>
+
+            <div id="cep">
+                <input placeholder="CEP" type="text" required>
+                <img src="../img/icon_cep.png" alt="cep_icon" width="24px">
+
+            </div>
+
+            </div>
+
+            <div id="tel">
+                <input placeholder="Telefone" type="text" maxlength="11" required>
+                <img src="../img/icon_tel.png" alt="tel_icon" width="24px">
+
+            </div>
+
+
+            <div id="container_btn">
+            <button type="submit" id="buttom">Registrar</button>
+
+
+            </div>
+
+            
+
+        </form>
+    </main>
+
+</body>
+
+</html>
