@@ -220,7 +220,7 @@ nav a:hover {
   nav.menu-secundario hr{
       border: none;
       height: 2px;
-      background-color: #b700ff;
+      background-color: #ff4757;
   }
   nav.menu-secundario a {
     color: var(--texto-branco);
