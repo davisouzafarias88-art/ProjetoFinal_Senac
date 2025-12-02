@@ -110,17 +110,17 @@ const produtos = {
         imagem: '/img/teclado.png',
         descricao: 'Teclado wireless com conexão 2.4GHz, bateria de longa duração e design compacto. Ideal para escritório e uso doméstico.'
     },
-    'Teclado Compacto 60%': {
-        nome: 'Teclado Compacto 60%',
+    'Teclado 60%': {
+        nome: 'Teclado 60%',
         preco: '299.90',
         imagem: '/img/teclado.png',
         descricao: 'Teclado mecânico compacto 60% com switches hot-swap, RGB por tecla e case de alumínio. Para entusiastas e profissionais.'
     },
-    'Teclado Low Profile': {
-        nome: 'Teclado Low Profile',
-        preco: '179.90',
+    'Teclado de escritório': {
+        nome: 'Teclado  de escritório ',
+        preco: '29.90',
         imagem: '/img/teclado.png',
-        descricao: 'Teclado mecânico low profile com switches de baixo perfil, digitação silenciosa e design elegante para uso profissional.'
+        descricao: 'Teclado de escritório com switches de baixo perfil, digitação silenciosa e design elegante para uso em escritório.'
     },
     // Produtos de headset
     'Headset Sem Fio': {
