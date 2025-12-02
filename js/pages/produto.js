@@ -153,13 +153,57 @@ const produtos = {
         imagem: '/img/headset.png',
         descricao: 'Headset premium com drivers planares magnéticos, construção em alumínio e áudio Hi-Fi para audiófilos.'
     },
-    // Produtos de acessórios
-    'Suporte para Monitor': {
-        nome: 'Suporte para Monitor',
-        preco: '89.90',
-        imagem: 'https://via.placeholder.com/500x400/737373/ffffff?text=Suporte+Monitor',
-        descricao: 'Suporte articulado para monitor de até 27 polegadas. Ajuste de altura, inclinação e rotação 360°. Compatível com VESA 75x75 e 100x100.'
-    },
+// Produtos de acessórios
+'Lightbar': {
+    nome: 'Lightbar',
+    preco: '89.90',
+    imagem: '/img/Lightbar.png',
+    descricao: 'Luminária Barra De Led Para Monitor Notebook Computador Usb Mesa Sensor touch 5 Modeos de Cor, Com Ajuste de intensidade de luz Em Alumínio e Metal USB-A/Type-C.'
+},
+
+'Fita de Led RGB': {
+    nome: 'Fita de Led RGB',
+    preco: '49.90',
+    imagem: '/img/fita de Led.png',
+    descricao: 'Fita de LED RGB com controle remoto, ideal para decoração e iluminação ambiente de setups gamer ou escritórios. Oferece diversas cores e modos de iluminação vibrantes.'
+},
+
+'Mesa Digitalizadora': {
+    nome: 'Mesa Digitalizadora',
+    preco: '89.90',
+    imagem: '/img/mesa digitalizadora.png',
+    descricao: 'Mesa digitalizadora profissional com alta sensibilidade à pressão e grande área ativa. Perfeita para desenho digital, ilustração, edição de fotos e anotações.'
+},
+
+'Switch': {
+    nome: 'Switch',
+    preco: '89.90',
+    imagem: '/img/switches.png',
+    descricao: 'Switch de rede compacto com portas Fast/Gigabit Ethernet (dependendo do modelo), ideal para expandir a rede doméstica ou do escritório, garantindo conexões estáveis e de alta velocidade.'
+},
+
+'pendrive': {
+    nome: 'pendrive',
+    preco: '69.90',
+    imagem: '/img/pendrive.png',
+    descricao: 'Pen drive de alta velocidade com capacidade de X GB (especificar a capacidade, ex: 64GB) e interface USB 3.0/3.1. Solução prática para armazenamento e transferência rápida de arquivos.'
+},
+
+'Microfone Gamer': {
+    nome: 'Microfone Gamer',
+    preco: '89.90',
+    imagem: '/img/microfone.png',
+    descricao: 'Microfone gamer de alta qualidade com captação omnidirecional/cardioide (dependendo do modelo) e conexão USB. Perfeito para streaming, gravação de voz e comunicação clara em jogos.'
+},
+
+
+
+
+
+
+
+
+
     // Produtos em oferta
     'Mouse Gamer RGB - OFERTA': {
         nome: 'Mouse Gamer RGB - OFERTA',
