@@ -55,72 +55,79 @@ const produtos = {
         descricao: 'Até 280 MB/s de leitura e 210 MB/s de gravação. Projetado para suas câmeras DSLR ou sem espelho, o cartão Lexar Professional 1800x SDXC UHS-II série GOLD permite capturar e transferir rapidamente fotos de alta qualidade e impressionantes vídeos Full-HD e 4K com velocidades de leitura de até 280 MB/s.'
     },
     // Produtos específicos da página de mouse
+    'Mouse Gamer Redragon CENTROPHORUS': {
+        nome: 'Mouse Gamer Redragon CENTROPHORUS',
+        preco: '89.90',
+        imagem: '/img/Mouse Gamer RGB.png',
+        descricao: 'Mouse ergonômico vertical para reduzir tensão no punho. Design anatômico, sensor de 1600 DPI e 6 botões programáveis para máximo conforto.'
+    },
+
     'Mouse Ergonômico': {
         nome: 'Mouse Ergonômico',
         preco: '79.90',
-        imagem: '/img/mouse.png',
+        imagem: '/img/Mouse Ergonomico.png',
         descricao: 'Mouse ergonômico vertical para reduzir tensão no punho. Design anatômico, sensor de 1600 DPI e 6 botões programáveis para máximo conforto.'
     },
-    'Mouse Sem Fio': {
-        nome: 'Mouse Sem Fio',
-        preco: '59.90',
-        imagem: '/img/mouse.png',
-        descricao: 'Mouse wireless com conexão 2.4GHz, alcance de até 10 metros. Bateria de longa duração, sensor óptico de 1200 DPI e design compacto.'
+    'Mouse Gamer Sem Fio Logitech G PRO X Superlight': {
+        nome: 'Mouse Gamer Sem Fio Logitech G PRO X Superlight',
+        preco: '490.90',
+        imagem: '/img/Logitech Superlight.png',
+        descricao: 'Apresentando o PRO X SUPERLIGHT - o mouse PRO mais leve e rápido de todos os tempos da Logitech. Com tecnologia LIGHTSPEED, foi desenvolvido para ajudá-lo a remover todos os obstáculos, para que você possa se concentrar exclusivamente em vencer.'
     },
-    'Mouse Vertical': {
-        nome: 'Mouse Vertical',
-        preco: '99.90',
-        imagem: '/img/mouse.png',
-        descricao: 'Mouse vertical ergonômico para posição natural da mão. Reduz fadiga e tensão, sensor de 2400 DPI e 5 botões programáveis.'
+    'Mouse Attack Shark X3': {
+        nome: 'Mouse Attack Shark X3',
+        preco: '110.90',
+        imagem: '/img/Mouse Attack Shark X3.png',
+        descricao: 'Mouse Gamer Attack Shark X3 ultra leve Pixel Art PAW 3395 Tri mode 26,000 Dpi Wireless'
     },
-    'Mouse Pro Gamer': {
-        nome: 'Mouse Pro Gamer',
+    'Mouse Redragon Cobra Pro': {
+        nome: 'Mouse Redragon Cobra Pro',
         preco: '149.90',
-        imagem: '/img/mouse.png',
-        descricao: 'Mouse gamer profissional com sensor de 16.000 DPI, 11 botões programáveis e peso ajustável. RGB personalizável e switches com 50 milhões de cliques.'
+        imagem: '/img/Mouse Redragon Cobra.png',
+        descricao: 'Mouse Gamer Redragon Cobra Pro RGB, Wireless, Sem Fio, 16000DPI, 8 Botões Programáveis, USB 2.4G - M711 Pro gamer profissional com sensor de 16.000 DPI, 11 botões programáveis e peso ajustável. RGB personalizável e switches com 50 milhões de cliques.'
     },
-    'Mouse Compacto': {
-        nome: 'Mouse Compacto',
+    'Mouse de Escritorio': {
+        nome: 'Mouse de Escritorio',
         preco: '39.90',
-        imagem: '/img/mouse.png',
-        descricao: 'Mouse compacto ideal para notebooks e viagens. Design minimalista, sensor óptico de 1000 DPI e conexão USB plug-and-play.'
+        imagem: '/img/Mouse de Escritorio.png',
+        descricao: 'Mouse Óptico Com Fio USB Logitech M90 910-004053 | Preto.'
     },
     // Produtos de teclado
-    'Teclado Mecânico RGB': {
-        nome: 'Teclado Mecânico RGB',
+    'ATTACK SHARK x AJAZZ': {
+        nome: 'ATTACK SHARK x AJAZZ',
         preco: '249.90',
-        imagem: '/img/teclado.png',
-        descricao: 'Teclado mecânico RGB com switches Cherry MX, retroiluminação personalizável e teclas anti-ghosting. Layout ABNT2 e construção premium.'
+        imagem: '/img/Teclado Mecânico RGB.png',
+        descricao: 'Teclado mecânico para jogos com fio, com vedação e controle de botão CNC, layout ANSI 75%.'
     },
-    'Teclado Mecânico Switch Blue': {
-        nome: 'Teclado Mecânico Switch Blue',
+    'Teclado Gamer Mecânico Rgb': {
+        nome: 'Teclado Gamer Mecânico Rgb',
         preco: '199.90',
-        imagem: '/img/teclado.png',
-        descricao: 'Teclado mecânico com switches Cherry MX Blue para feedback tátil e sonoro. Ideal para digitação e jogos casuais.'
+        imagem: '/img/Teclado Mecânico Switch Blue.png',
+        descricao: 'Switch Blue Antighosting Usb 24 Efeitos Teclas Removíveis.'
     },
     'Teclado Gamer com LED': {
         nome: 'Teclado Gamer com LED',
         preco: '149.90',
-        imagem: '/img/teclado.png',
+        imagem: '/img/Teclado Gamer com LED.png',
         descricao: 'Teclado gamer com iluminação LED azul, teclas anti-ghosting e design resistente a respingos. Perfeito para longas sessões de jogo.'
     },
     'Teclado Sem Fio': {
         nome: 'Teclado Sem Fio',
         preco: '129.90',
-        imagem: '/img/teclado.png',
+        imagem: '/img/Teclado Sem Fio.png',
         descricao: 'Teclado wireless com conexão 2.4GHz, bateria de longa duração e design compacto. Ideal para escritório e uso doméstico.'
     },
-    'Teclado 60%': {
-        nome: 'Teclado 60%',
+    'Teclado Mecânico Gamer Magnético Akko x Monsgeek': {
+        nome: 'Teclado Mecânico Gamer Magnético Akko x Monsgeek',
         preco: '299.90',
-        imagem: '/img/teclado.png',
-        descricao: 'Teclado mecânico compacto 60% com switches hot-swap, RGB por tecla e case de alumínio. Para entusiastas e profissionais.'
+        imagem: '/img/Teclado 60.png',
+        descricao: 'Fun60 Pro SP Preto 8k Switch Akko Glare Linear AKKO01-00005-BLK.'
     },
-    'Teclado de escritório': {
-        nome: 'Teclado  de escritório ',
-        preco: '29.90',
-        imagem: '/img/teclado.png',
-        descricao: 'Teclado de escritório com switches de baixo perfil, digitação silenciosa e design elegante para uso em escritório.'
+    'Teclado de Escritório': {
+        nome: 'Teclado de Escritório',
+        preco: '179.90',
+        imagem: '/img/Teclado de Escritorio.png',
+        descricao: 'Teclado mecânico low profile com switches de baixo perfil, digitação silenciosa e design elegante para uso profissional.'
     },
     // Produtos de headset
     'Headset Sem Fio': {
