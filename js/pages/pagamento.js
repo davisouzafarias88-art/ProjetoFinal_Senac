@@ -1,6 +1,34 @@
+// Preencher dados do usuário logado
+function preencherDadosUsuario() {
+  const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+  
+  console.log('Usuário logado:', usuario);
+  
+  if (usuario) {
+    const formSections = document.querySelectorAll('.form-section');
+    
+    // Dados Pessoais 
+    const dadosPessoais = formSections[0].querySelectorAll('input');
+    dadosPessoais[0].value = usuario.nome || '';
+    dadosPessoais[1].value = usuario.email || '';
+    dadosPessoais[2].value = usuario.telefone || '';
+    dadosPessoais[3].value = usuario.cpf || '';
+    
+    // Endereço de Entrega 
+    const enderecoInputs = formSections[1].querySelectorAll('input');
+    enderecoInputs[0].value = usuario.cep || '';
+    enderecoInputs[1].value = usuario.endereco || '';
+    enderecoInputs[4].value = usuario.cidade || '';
+    
+    console.log('Dados preenchidos com sucesso!');
+  } else {
+    console.log('Nenhum usuário logado encontrado');
+  }
+}
+
 // Carregar resumo do carrinho
 function carregarResumo() {
-  const carrinho = JSON.parse(localStorage.getItem('carrinho'));
+  const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
   const container = document.getElementById('itens-resumo');
   
   if (!carrinho.length) {
@@ -30,17 +58,23 @@ function finalizarCompra() {
     if (!campo.value.trim()) {
       campo.style.borderColor = 'red';
       valido = false;
+    } else {
+      campo.style.borderColor = '';
     }
   });
   
   if (!valido) {
-    alert('Preencha todos os campos!');
+    alert('Preencha todos os campos obrigatórios!');
     return;
   }
   
   localStorage.removeItem('carrinho');
   alert('Compra realizada com sucesso!');
-  window.location.href = '/html/layout.html';
+  window.location.href = '/pages/index.html';
 }
 
-carregarResumo();
+// Executar quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', () => {
+  preencherDadosUsuario();
+  carregarResumo();
+});

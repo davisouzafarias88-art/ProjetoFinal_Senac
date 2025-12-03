@@ -1,29 +1,18 @@
-const API_URL = 'http://localhost:3000/api';
-
-document.querySelector('form').addEventListener('submit', async (e) => {
+document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
     
     const email = document.querySelector('#login input[type="email"]').value;
     const senha = document.querySelector('#senha input[type="password"]').value;
     
-    try {
-        const response = await fetch(`${API_URL}/login`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, senha })
-        });
-        
-        const data = await response.json();
-        
-        if (data.success) {
-            localStorage.setItem('usuario', JSON.stringify(data.usuario));
-            alert('Login realizado com sucesso!');
-            window.location.href = '../index.html';
-        } else {
-            alert('Email ou senha incorretos!');
-        }
-    } catch (error) {
-        alert('Erro ao conectar com o servidor. Verifique se a API está rodando.');
-        console.error(error);
+    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    const usuario = usuarios.find(u => u.email === email && u.senha === senha);
+    
+    if (usuario) {
+        const { senha: _, ...usuarioSemSenha } = usuario;
+        localStorage.setItem('usuarioLogado', JSON.stringify(usuarioSemSenha));
+        alert('Login realizado com sucesso!');
+        window.location.href = '../index.html';
+    } else {
+        alert('Email ou senha incorretos!');
     }
 });
