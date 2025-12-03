@@ -315,18 +315,19 @@ section {
   display: flex;
   align-items: center;
   background: rgba(183, 0, 255, 0.1);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 15px;
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
   border: 1px solid rgba(183, 0, 255, 0.3);
+  gap: 15px;
 }
 
 .item-carrinho img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
-  border-radius: 8px;
-  margin-right: 20px;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
 
 .info-produto {
@@ -336,13 +337,22 @@ section {
 
 .info-produto h3 {
   color: white;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
+  font-size: 1rem;
 }
 
 .info-produto .preco {
   color: #b700ff;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.info-produto .preco-total {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin: 3px 0 0 0;
 }
 
 .botao-remover {

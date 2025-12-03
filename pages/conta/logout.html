@@ -45,7 +45,7 @@
   <main>
     <div class="container">
       <div class="navegacao">
-        <a href="/pages/index.html"><i class="fas fa-arrow-left"></i> Voltar</a>
+        <a href="/pages/conta/perfil.html"><i class="fas fa-arrow-left"></i> Voltar </a>
       </div>
       
       <div class="logout-container">
@@ -57,10 +57,10 @@
           <p>Tem certeza de que deseja sair da sua conta?<br>Você precisará fazer login novamente para acessar sua conta.</p>
           
           <div class="logout-acoes">
-            <a href="/html/nav/login.html" class="botao-logout">
+            <button onclick="fazerLogout()" class="botao-logout">
               <i class="fas fa-sign-out-alt"></i> Sair da Conta
-            </a>
-            <a href="/html/nav/conta.html" class="botao-cancelar">
+            </button>
+            <a href="/pages/conta/perfil.html" class="botao-cancelar">
               <i class="fas fa-times"></i> Cancelar
             </a>
           </div>
@@ -104,5 +104,16 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    function fazerLogout() {
+      localStorage.removeItem('usuarioLogado');
+      localStorage.removeItem('usuarios');
+      localStorage.removeItem('carrinho');
+      alert('Você foi desconectado com sucesso!');
+      window.location.href = '/pages/index.html';
+    }
+  </script>
 </body>
 </html>
+  

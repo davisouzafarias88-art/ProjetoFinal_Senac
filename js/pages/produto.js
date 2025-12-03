@@ -305,21 +305,23 @@ function carregarProduto() {
 // Função para adicionar produto ao carrinho
 function adicionarAoCarrinho(produto, quantidade) {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    const qtd = parseInt(quantidade) || 1;
     
     const itemExistente = carrinho.find(item => item.nome === produto.nome);
     
     if (itemExistente) {
-        itemExistente.quantidade += parseInt(quantidade);
+        itemExistente.quantidade += qtd;
     } else {
         carrinho.push({
             nome: produto.nome,
             preco: produto.preco,
             imagem: produto.imagem,
-            quantidade: parseInt(quantidade)
+            quantidade: qtd
         });
     }
     
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    alert(`${qtd} ${produto.nome}(s) adicionado(s) ao carrinho!`);
     
     // Feedback visual
     const botao = document.getElementById('botao-adicionar');

@@ -128,43 +128,7 @@
       </div>
     </div>
   </footer>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-      const container = document.getElementById('itens-carrinho');
-      const carrinhoVazio = document.getElementById('carrinho-vazio');
-      const totalCarrinho = document.getElementById('total-carrinho');
-      const valorTotal = document.getElementById('valor-total');
-      
-      if (carrinho.length === 0) {
-        carrinhoVazio.style.display = 'block';
-      } else {
-        let total = 0;
-        carrinho.forEach((produto, index) => {
-          total += parseFloat(produto.preco);
-          container.innerHTML += `
-            <div class="item-carrinho">
-              <img src="${produto.img}" alt="${produto.nome}">
-              <div class="info-produto">
-                <h3>${produto.nome}</h3>
-                <p class="preco">R$ ${produto.preco.replace('.', ',')}</p>
-              </div>
-              <button class="botao-remover" onclick="removerItem(${index})">Remover</button>
-            </div>
-          `;
-        });
-        valorTotal.textContent = total.toFixed(2).replace('.', ',');
-        totalCarrinho.style.display = 'block';
-      }
-    });
-    
-    function removerItem(index) {
-      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-      carrinho.splice(index, 1);
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      location.reload();
-    }
-  </script>
+  <script src="/js/core/carrinho.js"></script>
   <script src="/js/busca-carrinho.js"></script>
 </body>
 

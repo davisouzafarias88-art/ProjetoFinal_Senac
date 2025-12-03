@@ -40,8 +40,11 @@ function carregarResumo() {
   container.innerHTML = '';
   
   carrinho.forEach(produto => {
-    subtotal += parseFloat(produto.preco);
-    container.innerHTML += `<div><span>${produto.nome}</span><span>R$ ${produto.preco.replace('.', ',')}</span></div>`;
+    const quantidade = produto.quantidade || 1;
+    const precoUnitario = parseFloat(produto.preco);
+    const precoTotal = precoUnitario * quantidade;
+    subtotal += precoTotal;
+    container.innerHTML += `<div><span>${produto.nome} x${quantidade}</span><span>R$ ${precoTotal.toFixed(2).replace('.', ',')}</span></div>`;
   });
   
   const total = subtotal + 15.90;
