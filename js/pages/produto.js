@@ -189,8 +189,8 @@ const produtos = {
     descricao: 'Switch de rede compacto com portas Fast/Gigabit Ethernet (dependendo do modelo), ideal para expandir a rede doméstica ou do escritório, garantindo conexões estáveis e de alta velocidade.'
 },
 
-'pendrive': {
-    nome: 'pendrive',
+'Pendrive': {
+    nome: 'Pendrive',
     preco: '69.90',
     imagem: '/img/pendrive.png',
     descricao: 'Pen drive de alta velocidade com capacidade de X GB (especificar a capacidade, ex: 64GB) e interface USB 3.0/3.1. Solução prática para armazenamento e transferência rápida de arquivos.'
@@ -262,6 +262,7 @@ function carregarProduto() {
         document.getElementById('produto-titulo').textContent = `${produto.nome} - TechMoon`;
         document.getElementById('produto-nome').textContent = produto.nome;
         document.getElementById('produto-preco').textContent = produto.preco;
+        atualizarParcelas(produto.preco);
         document.getElementById('produto-img').src = produto.imagem;
         document.getElementById('produto-img').alt = produto.nome;
         document.getElementById('produto-desc').textContent = produto.descricao;
@@ -334,3 +335,29 @@ function adicionarAoCarrinho(produto, quantidade) {
 
 // Carregar produto quando a página carregar
 document.addEventListener('DOMContentLoaded', carregarProduto);
+
+function atualizarParcelas(preco) {
+    const container = document.getElementById("lista-parcelas");
+    container.innerHTML = ""; // limpar antes de recriar tudo
+
+    const precoNum = parseFloat(preco);
+
+    for (let i = 1; i <= 5; i++) {
+        let parcelaSemJuros = precoNum / i;
+
+        const div = document.createElement("div");
+        div.classList.add("parcela");
+
+        if (i === 1) div.classList.add("destaque");
+
+        div.innerHTML = `
+            ${i}x de R$ ${parcelaSemJuros.toFixed(2).replace(".", ",")} 
+            <span>(sem juros)</span>
+        `;
+
+        container.appendChild(div);
+    }
+}
+
+
+
