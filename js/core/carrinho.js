@@ -16,104 +16,113 @@ function normalizarCaminho(caminho) {
   return '/img/' + caminho;
 }
 
-// Quando a página carrega, ativa os botões de adicionar ao carrinho
+// Adicionar ao carrinho com API
 document.addEventListener('DOMContentLoaded', function() {
-  // Pega todos os botões de adicionar
   document.querySelectorAll('.botao-carrinho').forEach(botao => {
-    botao.onclick = function() {
-      // Pega o item (produto) mais próximo do botão
+    botao.onclick = async function() {
       const item = this.closest('.item');
-      // Cria um objeto com os dados do produto
-      const produto = {
-        nome: item.dataset.nome,
-        preco: item.dataset.preco,
-        imagem: normalizarCaminho(item.dataset.img),
-        quantidade: 1
-      };
+      const produtoId = item.dataset.id;
+      const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
       
-      // Pega o carrinho do localStorage ou cria um vazio
-      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-      // Procura se o produto já tá no carrinho
-      const itemExistente = carrinho.find(p => p.nome === produto.nome);
-      
-      // Se já tá, só aumenta a quantidade
-      if (itemExistente) {
-        itemExistente.quantidade += 1;
-      } else {
-        // Se não tá, adiciona o produto novo
-        carrinho.push(produto);
+      if (!usuario) {
+        alert('Faça login para adicionar ao carrinho!');
+        window.location.href = '/pages/autenticacao/login.html';
+        return;
       }
       
-      // Salva o carrinho atualizado no localStorage
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      // Muda o texto do botão pra mostrar que foi adicionado
-      this.textContent = 'Adicionado!';
-      // Depois de 1.5 segundos, volta ao texto original
-      setTimeout(() => this.textContent = 'Adicionar', 1500);
+      try {
+        const response = await fetch('http://localhost:3000/api/carrinho', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            usuario_id: usuario.id,
+            produto_id: produtoId,
+            quantidade: 1
+          })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          this.textContent = 'Adicionado!';
+          setTimeout(() => this.textContent = 'Adicionar', 1500);
+        } else {
+          alert('Erro ao adicionar ao carrinho');
+        }
+      } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao adicionar. Servidor offline.');
+      }
     };
   });
 });
 
-// Quando a página do carrinho carrega, mostra os produtos
-document.addEventListener('DOMContentLoaded', function() {
-  // Pega o container onde os itens vão aparecer
+// Carregar carrinho da API
+document.addEventListener('DOMContentLoaded', async function() {
   const container = document.getElementById('itens-carrinho');
-  // Se não tiver container, sai daqui (não é a página do carrinho)
   if (!container) return;
   
-  // Pega o carrinho do localStorage
-  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-  // Pega os elementos da página
+  const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
   const carrinhoVazio = document.getElementById('carrinho-vazio');
   const totalCarrinho = document.getElementById('total-carrinho');
   const valorTotal = document.getElementById('valor-total');
   
-  // Se o carrinho tá vazio, mostra a mensagem
-  if (carrinho.length === 0) {
+  if (!usuario) {
+    carrinhoVazio.innerHTML = '<p>Faça login para ver seu carrinho</p>';
     carrinhoVazio.style.display = 'block';
-  } else {
-    // Se tem produtos, mostra cada um
-    let total = 0;
-    carrinho.forEach((produto, index) => {
-      // Pega a quantidade (ou 1 se não tiver)
-      const quantidade = produto.quantidade || 1;
-      // Converte o preço pra número
-      const precoUnitario = parseFloat(produto.preco);
-      // Calcula o preço total (preço x quantidade)
-      const precoTotal = precoUnitario * quantidade;
-      // Soma no total geral
-      total += precoTotal;
-      // Arruma o caminho da imagem
-      const caminhoImg = normalizarCaminho(produto.imagem || produto.img);
-      
-      // Monta o HTML do item com imagem, info e botão de remover
-      container.innerHTML += `
-        <div class="item-carrinho">
-          <img src="${caminhoImg}" alt="${produto.nome}" onerror="this.src='/img/placeholder.png'">
-          <div class="info-produto">
-            <h3>${produto.nome}</h3>
-            <p class="preco">R$ ${precoUnitario.toFixed(2).replace('.', ',')} x ${quantidade}</p>
-            <p class="preco-total">Subtotal: R$ ${precoTotal.toFixed(2).replace('.', ',')}</p>
+    return;
+  }
+  
+  try {
+    const response = await fetch(`http://localhost:3000/api/carrinho/${usuario.id}`);
+    const carrinho = await response.json();
+    
+    if (carrinho.length === 0) {
+      carrinhoVazio.style.display = 'block';
+    } else {
+      let total = 0;
+      carrinho.forEach((item) => {
+        const precoTotal = item.preco * item.quantidade;
+        total += precoTotal;
+        
+        container.innerHTML += `
+          <div class="item-carrinho">
+            <img src="${item.imagem}" alt="${item.nome}">
+            <div class="info-produto">
+              <h3>${item.nome}</h3>
+              <p class="preco">R$ ${item.preco.toFixed(2).replace('.', ',')} x ${item.quantidade}</p>
+              <p class="preco-total">Subtotal: R$ ${precoTotal.toFixed(2).replace('.', ',')}</p>
+            </div>
+            <button class="botao-remover" onclick="removerItem(${item.id})">Remover</button>
           </div>
-          <button class="botao-remover" onclick="removerItem(${index})">Remover</button>
-        </div>
-      `;
-    });
-    // Mostra o total formatado
-    valorTotal.textContent = total.toFixed(2).replace('.', ',');
-    // Mostra a seção de total
-    totalCarrinho.style.display = 'block';
+        `;
+      });
+      valorTotal.textContent = total.toFixed(2).replace('.', ',');
+      totalCarrinho.style.display = 'block';
+    }
+  } catch (error) {
+    console.error('Erro:', error);
+    carrinhoVazio.innerHTML = '<p>Erro ao carregar carrinho</p>';
+    carrinhoVazio.style.display = 'block';
   }
 });
 
-// Função pra remover um item do carrinho
-function removerItem(index) {
-  // Pega o carrinho
-  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-  // Remove o item no índice especificado
-  carrinho.splice(index, 1);
-  // Salva o carrinho atualizado
-  localStorage.setItem('carrinho', JSON.stringify(carrinho));
-  // Recarrega a página pra atualizar a visualização
-  location.reload();
+// Remover item do carrinho via API
+async function removerItem(itemId) {
+  try {
+    const response = await fetch(`http://localhost:3000/api/carrinho/${itemId}`, {
+      method: 'DELETE'
+    });
+    
+    const data = await response.json();
+    
+    if (data.success) {
+      location.reload();
+    } else {
+      alert('Erro ao remover item');
+    }
+  } catch (error) {
+    console.error('Erro:', error);
+    alert('Erro ao remover. Servidor offline.');
+  }
 }

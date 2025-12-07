@@ -54,43 +54,42 @@ const produtos = {
         imagem: '../img/memoria_cartao.png',
         descricao: 'Até 280 MB/s de leitura e 210 MB/s de gravação. Projetado para suas câmeras DSLR ou sem espelho, o cartão Lexar Professional 1800x SDXC UHS-II série GOLD permite capturar e transferir rapidamente fotos de alta qualidade e impressionantes vídeos Full-HD e 4K com velocidades de leitura de até 280 MB/s.'
     },
-    // Produtos específicos da página de mouse
-    'Mouse Gamer Redragon CENTROPHORUS': {
-        nome: 'Mouse Gamer Redragon CENTROPHORUS',
-        preco: '89.90',
-        imagem: '/img/Mouse Gamer RGB.png',
-        descricao: 'Mouse ergonômico vertical para reduzir tensão no punho. Design anatômico, sensor de 1600 DPI e 6 botões programáveis para máximo conforto.'
+    // Produtos específicos da página de monitores
+    'Monitor LG 7.1': {
+        nome: 'Monitor LG 7.1',
+        preco: '559.99',
+        imagem: '/img/Monitor LG.png',
+        descricao: 'Monitor LG de alta qualidade com som surround 7.1 integrado. Resolução Full HD, cores vibrantes e design elegante para entretenimento e trabalho.'
     },
-
-    'Mouse Ergonômico': {
-        nome: 'Mouse Ergonômico',
-        preco: '79.90',
-        imagem: '/img/Mouse Ergonomico.png',
-        descricao: 'Mouse ergonômico vertical para reduzir tensão no punho. Design anatômico, sensor de 1600 DPI e 6 botões programáveis para máximo conforto.'
+    'Monitor Gamer ASUS': {
+        nome: 'Monitor Gamer ASUS',
+        preco: '999.99',
+        imagem: '/img/Monitor ASUS.png',
+        descricao: 'Monitor gamer ASUS com taxa de atualização de 144Hz, tempo de resposta de 1ms e tecnologia G-Sync. Perfeito para jogos competitivos com desempenho superior.'
     },
-    'Mouse Gamer Sem Fio Logitech G PRO X Superlight': {
-        nome: 'Mouse Gamer Sem Fio Logitech G PRO X Superlight',
-        preco: '490.90',
-        imagem: '/img/Logitech Superlight.png',
-        descricao: 'Apresentando o PRO X SUPERLIGHT - o mouse PRO mais leve e rápido de todos os tempos da Logitech. Com tecnologia LIGHTSPEED, foi desenvolvido para ajudá-lo a remover todos os obstáculos, para que você possa se concentrar exclusivamente em vencer.'
+    'Monitor ThinkVision': {
+        nome: 'Monitor ThinkVision',
+        preco: '467.49',
+        imagem: '/img/Monitor ThinkVision.png',
+        descricao: 'Monitor profissional ThinkVision com cores precisas e design compacto. Ideal para trabalho em escritório e edição de conteúdo com fidelidade de cores.'
     },
-    'Mouse Attack Shark X3': {
-        nome: 'Mouse Attack Shark X3',
-        preco: '110.90',
-        imagem: '/img/Mouse Attack Shark X3.png',
-        descricao: 'Mouse Gamer Attack Shark X3 ultra leve Pixel Art PAW 3395 Tri mode 26,000 Dpi Wireless'
+    'Monitor Gamer AOC': {
+        nome: 'Monitor Gamer AOC',
+        preco: '999.99',
+        imagem: '/img/Monitor AOC.png',
+        descricao: 'Monitor gamer AOC com resolução 2K, 144Hz e tempo de resposta ultra rápido. Tecnologia FreeSync para experiência de jogo suave e imersiva.'
     },
-    'Mouse Redragon Cobra Pro': {
-        nome: 'Mouse Redragon Cobra Pro',
-        preco: '149.90',
-        imagem: '/img/Mouse Redragon Cobra.png',
-        descricao: 'Mouse Gamer Redragon Cobra Pro RGB, Wireless, Sem Fio, 16000DPI, 8 Botões Programáveis, USB 2.4G - M711 Pro gamer profissional com sensor de 16.000 DPI, 11 botões programáveis e peso ajustável. RGB personalizável e switches com 50 milhões de cliques.'
+    'Monitor Gamer Samsung': {
+        nome: 'Monitor Gamer Samsung',
+        preco: '549.99',
+        imagem: '/img/Monitor Sansung.png',
+        descricao: 'Monitor gamer Samsung com painel curvo, 144Hz e cores vibrantes. Design ergonômico e suporte ajustável para conforto durante longas sessões.'
     },
-    'Mouse de Escritorio': {
-        nome: 'Mouse de Escritorio',
-        preco: '39.90',
-        imagem: '/img/Mouse de Escritorio.png',
-        descricao: 'Mouse Óptico Com Fio USB Logitech M90 910-004053 | Preto.'
+    'Monitor Profissional LG': {
+        nome: 'Monitor Profissional LG',
+        preco: '1399.99',
+        imagem: '/img/Monitor Profissional LG.png',
+        descricao: 'Monitor profissional LG 4K com calibração de cores de fábrica. Ideal para fotógrafos, designers e profissionais que exigem precisão de cores absoluta.'
     },
     // Produtos de teclado
     'ATTACK SHARK x AJAZZ': {
@@ -130,123 +129,115 @@ const produtos = {
         descricao: 'Teclado mecânico low profile com switches de baixo perfil, digitação silenciosa e design elegante para uso profissional.'
     },
     // Produtos de headset
-    'Headset Sem Fio': {
-        nome: 'Headset Sem Fio',
-        preco: '299.90',
-        imagem: '/img/headset.png',
-        descricao: 'Headset wireless com som surround, bateria de 20 horas e microfone com cancelamento de ruído. Conexão Bluetooth e 2.4GHz.'
+    'Headset Gamer Redragon Zeus Lite': {
+        nome: 'Headset Gamer Redragon Zeus Lite',
+        preco: '154.99',
+        imagem: '/img/Headset Gamer Redragon.png',
+        descricao: 'Headset gamer Redragon Zeus Lite com som surround 7.1, microfone com cancelamento de ruído e design ergonômico. Perfeito para jogos competitivos.'
     },
-    'Headset Profissional': {
-        nome: 'Headset Profissional',
-        preco: '399.90',
-        imagem: '/img/headset.png',
-        descricao: 'Headset profissional com drivers de 50mm, isolamento acústico superior e microfone broadcast. Ideal para streaming e trabalho.'
+    'Headset Gamer Havit 2015d': {
+        nome: 'Headset Gamer Havit 2015d',
+        preco: '149.99',
+        imagem: '/img/Headset Gamer Havit.png',
+        descricao: 'Headset gamer Havit 2015d com drivers de alta qualidade, microfone flexível e almofadas confortáveis para longas sessões.'
     },
-    'Headset RGB': {
-        nome: 'Headset RGB',
-        preco: '229.90',
-        imagem: '/img/headset.png',
-        descricao: 'Headset gamer com iluminação RGB sincronizada, som surround 7.1 e design ergonômico para longas sessões de jogo.'
+    'Headset Gamer Havit H2230d': {
+        nome: 'Headset Gamer Havit H2230d',
+        preco: '109.99',
+        imagem: '/img/Headset Gamer Havit H2230d.png',
+        descricao: 'Headset gamer Havit H2230d com som estéreo de qualidade, design compacto e microfone integrado. Ideal para jogadores casuais.'
     },
-    'Headset Compacto': {
-        nome: 'Headset Compacto',
+    'Headset Gamer Solid Gear Titanium': {
+        nome: 'Headset Gamer Solid Gear Titanium',
+        preco: '105.99',
+        imagem: '/img/Headset Gamer Solid.png',
+        descricao: 'Headset gamer Solid Gear Titanium com construção resistente, som claro e microfone com cancelamento de ruído. Excelente custo-benefício.'
+    },
+    'Headset Sem Fio Logitech': {
+        nome: 'Headset Sem Fio Logitech',
+        preco: '398.99',
+        imagem: '/img/Headset Sem Fio Logitech.png',
+        descricao: 'Headset sem fio Logitech com conexão Bluetooth, bateria de longa duração e som de alta qualidade. Ideal para trabalho e entretenimento.'
+    },
+    'Headset Sem Fio Logitech Zone Vibe': {
+        nome: 'Headset Sem Fio Logitech Zone Vibe',
+        preco: '398.99',
+        imagem: '/img/Headset Sem Fio Logitech Zone Vibe 100.png',
+        descricao: 'Headset profissional Logitech Zone Vibe com som premium, microfone com IA e design confortável para videoconferências.'
+    },
+    // Produtos de acessórios
+    'Lightbar': {
+        nome: 'Lightbar',
         preco: '129.90',
-        imagem: '/img/headset.png',
-        descricao: 'Headset compacto e leve com áudio estéreo de qualidade, microfone flexível e almofadas confortáveis.'
+        imagem: '/img/Lightbar.png',
+        descricao: 'Luminária Barra De Led Para Monitor Notebook Computador Usb Mesa Sensor touch 5 Modeos de Cor, Com Ajuste de intensidade de luz Em Alumínio e Metal USB-A/Type-C.'
     },
-    'Headset Premium': {
-        nome: 'Headset Premium',
-        preco: '599.90',
-        imagem: '/img/headset.png',
-        descricao: 'Headset premium com drivers planares magnéticos, construção em alumínio e áudio Hi-Fi para audiófilos.'
+    'Fita de Led RGB': {
+        nome: 'Fita de Led RGB',
+        preco: '49.90',
+        imagem: '/img/fita de Led.png',
+        descricao: 'Fita de LED RGB com controle remoto, ideal para decoração e iluminação ambiente de setups gamer ou escritórios. Oferece diversas cores e modos de iluminação vibrantes.'
     },
-// Produtos de acessórios
-'Lightbar': {
-    nome: 'Lightbar',
-    preco: '89.90',
-    imagem: '/img/Lightbar.png',
-    descricao: 'Luminária Barra De Led Para Monitor Notebook Computador Usb Mesa Sensor touch 5 Modeos de Cor, Com Ajuste de intensidade de luz Em Alumínio e Metal USB-A/Type-C.'
-},
-
-'Fita de Led RGB': {
-    nome: 'Fita de Led RGB',
-    preco: '49.90',
-    imagem: '/img/fita de Led.png',
-    descricao: 'Fita de LED RGB com controle remoto, ideal para decoração e iluminação ambiente de setups gamer ou escritórios. Oferece diversas cores e modos de iluminação vibrantes.'
-},
-
-'Mesa Digitalizadora': {
-    nome: 'Mesa Digitalizadora',
-    preco: '89.90',
-    imagem: '/img/mesa digitalizadora.png',
-    descricao: 'Mesa digitalizadora profissional com alta sensibilidade à pressão e grande área ativa. Perfeita para desenho digital, ilustração, edição de fotos e anotações.'
-},
-
-'Switch': {
-    nome: 'Switch',
-    preco: '89.90',
-    imagem: '/img/switches.png',
-    descricao: 'Switch de rede compacto com portas Fast/Gigabit Ethernet (dependendo do modelo), ideal para expandir a rede doméstica ou do escritório, garantindo conexões estáveis e de alta velocidade.'
-},
-
-'Pendrive': {
-    nome: 'Pendrive',
-    preco: '69.90',
-    imagem: '/img/pendrive.png',
-    descricao: 'Pen drive de alta velocidade com capacidade de X GB (especificar a capacidade, ex: 64GB) e interface USB 3.0/3.1. Solução prática para armazenamento e transferência rápida de arquivos.'
-},
-
-'Microfone Gamer': {
-    nome: 'Microfone Gamer',
-    preco: '89.90',
-    imagem: '/img/microfone.png',
-    descricao: 'Microfone gamer de alta qualidade com captação omnidirecional/cardioide (dependendo do modelo) e conexão USB. Perfeito para streaming, gravação de voz e comunicação clara em jogos.'
-},
-
-
-
-
-
-
-
-
-
+    'Mesa Digitalizadora Wacom': {
+        nome: 'Mesa Digitalizadora Wacom',
+        preco: '199.90',
+        imagem: '/img/mesa digitalizadora.png',
+        descricao: 'Mesa digitalizadora da Wacom profissional com alta sensibilidade à pressão e grande área ativa. Perfeita para desenho digital, ilustração, edição de fotos e anotações.'
+    },
+    'Switch V3 Pro Silver ': {
+        nome: 'Switch V3 Pro Silver ',
+        preco: '149.90',
+        imagem: '/img/switches.png',
+        descricao: 'Switch V3 Pro Silver mecânico com resposta tátil suave e durabilidade superior. Ideal para teclados personalizados e entusiastas de digitação.'
+    },
+    'Pendrive Sandisk': {
+        nome: 'Pendrive Sandisk',
+        preco: '69.90',
+        imagem: '/img/pendrive.png',
+        descricao: 'Pen drive Sandisk com alta velocidade de transferência e capacidade de armazenamento confiável. Compacto e portátil, ideal para transportar arquivos importantes.'
+    },
+    'Microfone Gamer Rise Mode': {
+        nome: 'Microfone Gamer Rise Mode',
+        preco: '89.90',
+        imagem: '/img/microfone.png',
+        descricao: 'Microfone gamer Rise Mode com qualidade de estúdio, ideal para streaming, podcasts e gravação de voz. Oferece captação clara e redução de ruído ambiente.   '
+    },
     // Produtos em oferta
-    'Mouse Gamer RGB - OFERTA': {
-        nome: 'Mouse Gamer RGB - OFERTA',
-        preco: '59.90',
-        imagem: '../img/mouse.png',
-        descricao: 'Mouse gamer RGB em promoção especial! Sensor de 12.000 DPI, 7 botões programáveis e iluminação personalizável. Oferta por tempo limitado.'
+    'Mouse Gamer RGB Redragon CENTROPHORUS - OFERTA': {
+        nome: 'Mouse Gamer RGB Redragon CENTROPHORUS - OFERTA',
+        preco: '69.99',
+        imagem: '../img/Mouse Gamer RGB.png',
+        descricao: 'Mouse gamer Redragon CENTROPHORUS com sensor de 12.000 DPI, 7 botões programáveis e iluminação personalizável. Oferta por tempo limitado.'
     },
-    'Teclado Mecânico - OFERTA': {
-        nome: 'Teclado Mecânico - OFERTA',
-        preco: '179.90',
-        imagem: '../img/mouse2.webp',
-        descricao: 'Teclado mecânico em oferta imperdível! Switches Cherry MX, RGB e layout ABNT2. Economia de R$ 70,00!'
+    'Teclado Mecânico Switch Blue - OFERTA': {
+        nome: 'Teclado Mecânico Switch Blue - OFERTA',
+        preco: '149.99',
+        imagem: '../img/Teclado Mecânico Switch Blue.png',
+        descricao: 'Teclado mecânico Switch Blue com switches Cherry MX, RGB e layout ABNT2. Oferta por tempo limitado.'
     },
-    'Headset Gamer - OFERTA': {
-        nome: 'Headset Gamer - OFERTA',
-        preco: '99.90',
-        imagem: 'https://via.placeholder.com/500x400/737373/ffffff?text=Headset+Oferta',
-        descricao: 'Headset gamer com desconto especial! Som surround 7.1, microfone com cancelamento de ruído. Promoção limitada!'
+    'Headset Gamer Havit 2015d - OFERTA': {
+        nome: 'Headset Gamer Havit 2015d - OFERTA',
+        preco: '99.99',
+        imagem: '../img/Headset Gamer Havit.png',
+        descricao: 'Headset gamer Havit 2015d com som surround 7.1, microfone com cancelamento de ruído. Oferta por tempo limitado.'
     },
     'Webcam HD - OFERTA': {
         nome: 'Webcam HD - OFERTA',
-        preco: '79.90',
-        imagem: 'https://via.placeholder.com/500x400/737373/ffffff?text=Webcam+Oferta',
-        descricao: 'Webcam Full HD 1080p em oferta! Foco automático, microfone integrado e qualidade profissional por um preço incrível.'
+        preco: '279.99',
+        imagem: '../img/webcam.png',
+        descricao: 'Webcam Full HD 1080p com foco automático, microfone integrado e qualidade profissional. Oferta por tempo limitado.'
     },
     'Mousepad RGB - OFERTA': {
         nome: 'Mousepad RGB - OFERTA',
-        preco: '29.90',
-        imagem: 'https://via.placeholder.com/500x400/737373/ffffff?text=Mousepad+Oferta',
-        descricao: 'Mousepad RGB grande em promoção! Iluminação nas bordas, base antiderrapante e superfície otimizada. Oferta especial!'
+        preco: '49.99',
+        imagem: '../img/mousepad.png',
+        descricao: 'Mousepad RGB grande com iluminação nas bordas, base antiderrapante e superfície otimizada. Oferta por tempo limitado.'
     },
-    'Kit Gamer Completo - OFERTA': {
-        nome: 'Kit Gamer Completo - OFERTA',
-        preco: '399.90',
-        imagem: 'https://via.placeholder.com/500x400/737373/ffffff?text=Kit+Gamer',
-        descricao: 'Kit gamer completo em oferta! Inclui mouse, teclado, headset e mousepad RGB. Economia de R$ 200,00 no combo!'
+    'Monitor Gamer AOC - OFERTA': {
+        nome: 'Monitor Gamer AOC - OFERTA',
+        preco: '799.99',
+        imagem: '../img/Monitor AOC.png',
+        descricao: 'Monitor gamer AOC com resolução 2K, 144Hz e tempo de resposta ultra rápido. Oferta por tempo limitado.'
     },
 };
 
@@ -360,6 +351,3 @@ function atualizarParcelas(preco) {
         container.appendChild(div);
     }
 }
-
-
-
