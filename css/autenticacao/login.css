@@ -120,12 +120,10 @@ body{
 }
 
 #registrar a{
-  color:white;
- 
+    text-decoration: none;
 }
 
 #registrar a:hover{
-    color: #b700ff;
     text-decoration: underline;
 }
 
