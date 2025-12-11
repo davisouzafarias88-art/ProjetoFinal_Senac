@@ -1,4 +1,5 @@
-
+-- Criar banco de dados se não existir
+CREATE DATABASE IF NOT EXISTS ecommerce;
 USE ecommerce;
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
