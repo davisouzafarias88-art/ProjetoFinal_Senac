@@ -1,9 +1,10 @@
 // Dados dos produtos
 const produtos = {
+    // Produtos em pagina principal
     'Mouse Gamer RGB': {
         nome: 'Mouse Gamer RGB',
         preco: '149.90',
-        imagem: '../img/mouse.png',
+        imagem: '/img/mouse.png',
         descricao: 'Mouse gamer de alta precisão com iluminação RGB personalizável. Sensor óptico de 12.000 DPI, 7 botões programáveis e design ergonômico para longas sessões de jogo. Compatível com Windows, Mac e Linux.'
     },
     'Teclado Mecânico': {
@@ -54,7 +55,7 @@ const produtos = {
         imagem: '../img/memoria_cartao.png',
         descricao: 'Até 280 MB/s de leitura e 210 MB/s de gravação. Projetado para suas câmeras DSLR ou sem espelho, o cartão Lexar Professional 1800x SDXC UHS-II série GOLD permite capturar e transferir rapidamente fotos de alta qualidade e impressionantes vídeos Full-HD e 4K com velocidades de leitura de até 280 MB/s.'
     },
-    // Produtos específicos da página de monitores
+    // Produtos página de monitores
     'Monitor LG 7.1': {
         nome: 'Monitor LG 7.1',
         preco: '559.99',
@@ -128,6 +129,49 @@ const produtos = {
         imagem: '/img/Teclado de Escritorio.png',
         descricao: 'Teclado mecânico low profile com switches de baixo perfil, digitação silenciosa e design elegante para uso profissional.'
     },
+    // Produtos de mouse
+     // Produtos específicos da página de mouse
+    'Mouse Gamer Redragon CENTROPHORUS': {
+        nome: 'Mouse Gamer Redragon CENTROPHORUS',
+        preco: '89.90',
+        imagem: '/img/Mouse Gamer RGB.png',
+        descricao: 'Mouse ergonômico vertical para reduzir tensão no punho. Design anatômico, sensor de 1600 DPI e 6 botões programáveis para máximo conforto.'
+    },
+
+    'Mouse Ergonômico': {
+        nome: 'Mouse Ergonômico',
+        preco: '79.90',
+        imagem: '/img/Mouse Ergonomico.png',
+        descricao: 'Mouse ergonômico vertical para reduzir tensão no punho. Design anatômico, sensor de 1600 DPI e 6 botões programáveis para máximo conforto.'
+    },
+    'Mouse Gamer Sem Fio Logitech G PRO X Superlight': {
+        nome: 'Mouse Gamer Sem Fio Logitech G PRO X Superlight',
+        preco: '490.90',
+        imagem: '/img/Logitech Superlight.png',
+        descricao: 'Apresentando o PRO X SUPERLIGHT - o mouse PRO mais leve e rápido de todos os tempos da Logitech. Com tecnologia LIGHTSPEED, foi desenvolvido para ajudá-lo a remover todos os obstáculos, para que você possa se concentrar exclusivamente em vencer.'
+    },
+    'Mouse Attack Shark X3': {
+        nome: 'Mouse Attack Shark X3',
+        preco: '110.90',
+        imagem: '/img/Mouse Attack Shark X3.png',
+        descricao: 'Mouse Gamer Attack Shark X3 ultra leve Pixel Art PAW 3395 Tri mode 26,000 Dpi Wireless'
+    },
+    'Mouse Redragon Cobra Pro': {
+        nome: 'Mouse Redragon Cobra Pro',
+        preco: '149.90',
+        imagem: '/img/Mouse Redragon Cobra.png',
+        descricao: 'Mouse Gamer Redragon Cobra Pro RGB, Wireless, Sem Fio, 16000DPI, 8 Botões Programáveis, USB 2.4G - M711 Pro gamer profissional com sensor de 16.000 DPI, 11 botões programáveis e peso ajustável. RGB personalizável e switches com 50 milhões de cliques.'
+    },
+    'Mouse de Escritorio': {
+        nome: 'Mouse de Escritorio',
+        preco: '39.90',
+        imagem: '/img/Mouse de Escritorio.png',
+        descricao: 'Mouse Óptico Com Fio USB Logitech M90 910-004053 | Preto.'
+    },
+
+
+
+
     // Produtos de headset
     'Headset Gamer Redragon Zeus Lite': {
         nome: 'Headset Gamer Redragon Zeus Lite',
@@ -293,10 +337,22 @@ function carregarProduto() {
     }
 }
 
+// Função para normalizar caminho da imagem
+function normalizarCaminho(caminho) {
+    if (!caminho) return '/img/placeholder.png';
+    if (caminho.includes('placeholder')) return caminho;
+    if (caminho.startsWith('http')) return caminho;
+    if (caminho.startsWith('/')) return caminho;
+    if (caminho.startsWith('../img/')) return caminho.replace('../img/', '/img/');
+    if (caminho.startsWith('img/')) return '/' + caminho;
+    return '/img/' + caminho;
+}
+
 // Função para adicionar produto ao carrinho
 function adicionarAoCarrinho(produto, quantidade) {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     const qtd = parseInt(quantidade) || 1;
+    const imagemNormalizada = normalizarCaminho(produto.imagem);
     
     const itemExistente = carrinho.find(item => item.nome === produto.nome);
     
@@ -305,15 +361,14 @@ function adicionarAoCarrinho(produto, quantidade) {
     } else {
         carrinho.push({
             nome: produto.nome,
-            preco: produto.preco,
-            imagem: produto.imagem,
+            preco: parseFloat(produto.preco),
+            imagem: imagemNormalizada,
             quantidade: qtd
         });
     }
     
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    alert(`${qtd} ${produto.nome}(s) adicionado(s) ao carrinho!`);
-    
+
     // Feedback visual
     const botao = document.getElementById('botao-adicionar');
     const textoOriginal = botao.textContent;

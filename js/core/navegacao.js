@@ -1,10 +1,6 @@
 // Função para navegar para página do produto
 function navegarParaProduto(nomeProduto) {
-    // Detectar se está em categorias ou página principal
-    const isCategorias = window.location.pathname.includes('/categorias/');
-    const url = isCategorias 
-        ? `/pages/produto.html?produto=${encodeURIComponent(nomeProduto)}`
-        : `/pages/produto.html?produto=${encodeURIComponent(nomeProduto)}`;
+    const url = `/pages/produto.html?produto=${encodeURIComponent(nomeProduto)}`;
     window.location.href = url;
 }
 
