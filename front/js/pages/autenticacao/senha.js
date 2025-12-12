@@ -18,12 +18,12 @@ document.querySelector('form').addEventListener('submit', async (e) => {
     
     if (!dadosCadastro) {
         alert('Dados de cadastro não encontrados.');
-        window.location.href = 'cadastro.html';
+        window.location.href = '/projetofinal/front/pages/autenticacao/cadastro.html';
         return;
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/usuarios', {
+        const response = await fetch('http://localhost:3002/api/usuarios/cadastro', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -34,10 +34,10 @@ document.querySelector('form').addEventListener('submit', async (e) => {
         
         const data = await response.json();
         
-        if (data.success) {
+        if (response.ok) {
             sessionStorage.removeItem('dadosCadastro');
             alert('Cadastro realizado com sucesso!');
-            window.location.href = 'login.html';
+            window.location.href = '/projetofinal/front/pages/autenticacao/login.html';
         } else {
             alert('Erro ao cadastrar: ' + (data.error || 'Email já cadastrado'));
         }
@@ -46,3 +46,4 @@ document.querySelector('form').addEventListener('submit', async (e) => {
         alert('Erro ao cadastrar. Verifique se o servidor está rodando.');
     }
 });
+

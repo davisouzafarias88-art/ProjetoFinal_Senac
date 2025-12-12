@@ -364,6 +364,17 @@ main .container {
   transition: all 0.3s;
 }
 
+.form-group select {
+  background: rgba(51, 51, 51, 0.9);
+  color: white;
+}
+
+.form-group select option {
+  background: #333;
+  color: white;
+  padding: 8px;
+}
+
 .form-group input:focus,
 .form-group select:focus {
   outline: none;

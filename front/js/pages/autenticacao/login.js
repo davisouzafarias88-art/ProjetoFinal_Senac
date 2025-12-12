@@ -10,7 +10,7 @@ document.querySelector('form').addEventListener('submit', async (e) => {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/usuarios/login', {
+        const response = await fetch('http://localhost:3002/api/usuarios/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, senha })
@@ -18,11 +18,11 @@ document.querySelector('form').addEventListener('submit', async (e) => {
         
         const data = await response.json();
         
-        if (data.success && data.usuario) {
+        if (response.ok && data.usuario) {
             delete data.usuario.senha;
             localStorage.setItem('usuarioLogado', JSON.stringify(data.usuario));
             alert('Login realizado com sucesso!');
-            window.location.href = '/pages/index.html';
+            window.location.href = '/projetofinal/front/pages/index.html';
         } else {
             alert(data.error || 'Email ou senha incorretos!');
         }

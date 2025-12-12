@@ -11,7 +11,7 @@ body{
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    background-image: url(/img/logo.jpeg);
+    background-image: url('../../img/Fundo_pagina_login.png');
     background-size: cover;
     background-position:center;
     align-items: center;
@@ -96,7 +96,7 @@ body{
 
 #buttom{
     background-color: rgb(255, 255, 255);
-    color: black;
+    color: #b700ff;
     width: 100%;
     height: 50px;
     border: none;
@@ -120,10 +120,13 @@ body{
 }
 
 #registrar a{
-    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
 #registrar a:hover{
+    color: #b700ff;
     text-decoration: underline;
 }
 

@@ -3,8 +3,8 @@ function navegarParaProduto(nomeProduto) {
     // Detectar se está em categorias ou página principal
     const isCategorias = window.location.pathname.includes('/categorias/');
     const url = isCategorias 
-        ? `/pages/produto.html?produto=${encodeURIComponent(nomeProduto)}`
-        : `/pages/produto.html?produto=${encodeURIComponent(nomeProduto)}`;
+        ? `/projetofinal/front/pages/produto.html?produto=${encodeURIComponent(nomeProduto)}`
+        : `/projetofinal/front/pages/produto.html?produto=${encodeURIComponent(nomeProduto)}`;
     window.location.href = url;
 }
 

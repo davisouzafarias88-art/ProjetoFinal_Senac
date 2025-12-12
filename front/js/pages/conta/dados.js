@@ -15,13 +15,14 @@ document.querySelector('.dados-form').addEventListener('submit', async (e) => {
   const dadosAtualizados = {
     nome: document.getElementById('nome').value,
     email: document.getElementById('email').value,
+    cpf: document.getElementById('cpf').value,
     telefone: document.getElementById('telefone').value,
     data_nascimento: document.getElementById('nascimento').value,
     genero: document.getElementById('genero').value
   };
   
   try {
-    const response = await fetch(`http://localhost:3000/api/usuarios/${usuario.id}`, {
+    const response = await fetch(`http://localhost:3002/api/usuarios/${usuario.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dadosAtualizados)
@@ -30,7 +31,17 @@ document.querySelector('.dados-form').addEventListener('submit', async (e) => {
     const data = await response.json();
     
     if (data.success) {
-      localStorage.setItem('usuarioLogado', JSON.stringify(data.usuario));
+      // Atualizar localStorage com os novos dados
+      const usuarioAtualizado = {
+        ...usuario,
+        nome: dadosAtualizados.nome,
+        email: dadosAtualizados.email,
+        cpf: dadosAtualizados.cpf,
+        telefone: dadosAtualizados.telefone,
+        data_nascimento: dadosAtualizados.data_nascimento,
+        genero: dadosAtualizados.genero
+      };
+      localStorage.setItem('usuarioLogado', JSON.stringify(usuarioAtualizado));
       alert('Dados atualizados com sucesso!');
     } else {
       alert('Erro ao atualizar dados');
@@ -63,7 +74,7 @@ document.querySelector('.senha-form').addEventListener('submit', async (e) => {
   }
   
   try {
-    const response = await fetch(`http://localhost:3000/api/usuarios/${usuario.id}/alterar-senha`, {
+    const response = await fetch(`http://localhost:3002/api/usuarios/${usuario.id}/alterar-senha`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ senhaAtual, novaSenha })
@@ -81,3 +92,4 @@ document.querySelector('.senha-form').addEventListener('submit', async (e) => {
     alert('Erro ao alterar senha');
   }
 });
+

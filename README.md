@@ -31,159 +31,249 @@ O **TechMoon** é um e-commerce completo que oferece uma experiência de compra 
 ## 📁 Estrutura de Arquivos
 
 ```
-#Projetofinal/
-├── css/
-│   ├── config_conta.css/
-│   │   ├── dados.css
-│   │   ├── endereco.css
-│   │   ├── logout.css
-│   │   ├── pagamento.css
-│   │   └── pedidos.css
-│   ├── nav/
-│   │   ├── carrinho.css
-│   │   ├── conta.css
-│   │   ├── pag.pagamento.css
-│   │   └── Pagina de Login.css
-│   ├── nav2/
-│   │   ├── acessorio.css
-│   │   ├── headset.css
-│   │   ├── mouse.css
-│   │   ├── ofertas.css
-│   │   └── teclado.css
-│   ├── Cadastro.css
-│   ├── layout.css
-│   ├── Pagina de Login.css
-│   ├── produto.css
-│   └── Senha_cadastro.css
-├── html/
-│   ├── config_conta.html/
-│   │   ├── dados.html
-│   │   ├── endereco.html
-│   │   ├── formas_de_pagamento.html
-│   │   ├── logout.html
-│   │   └── pedidos.html
-│   ├── nav/
-│   │   ├── Cadastro.html
-│   │   ├── carrinho.html
-│   │   ├── conta.html
-│   │   ├── login.html
-│   │   ├── pag.pagamento.html
-│   │   ├── Pagina de Login.html
-│   │   └── Senha_cadastro.html
-│   ├── nav2.html/
-│   │   ├── acessorio.html
-│   │   ├── headset.html
-│   │   ├── mouse.html
-│   │   ├── ofertas.html
-│   │   └── teclado.html
-│   ├── layout.html
-│   └── produto.html
-├── img/
-│   ├── Fundo_cadastro.png
-│   ├── Fundo_pagina_login.png
-│   ├── Fundo_senhacadastro.png
-│   ├── icon_*.png (ícones diversos)
-│   ├── logo.jpeg
-│   └── produtos/ (imagens de produtos)
-├── js/
-│   ├── carrinho.js       # Funcionalidades do carrinho de compras
-│   ├── layout.js         # Interações da página principal
-│   ├── produto.js        # Galeria e detalhes do produto
-│   ├── login.js          # Validação e autenticação
-│   └── cadastro.js       # Validação do formulário de cadastro
-    
-└── README.md
+projetofinal/
+├── back/                 # Backend da aplicação
+│   ├── api/
+│   │   ├── controllers/
+│   │   │   └── usuarioController.js
+│   │   ├── routes.js
+│   │   └── server.js
+│   ├── bd/
+│   │   └── conexao.js
+│   ├── .env
+│   ├── package.json
+│   └── package-lock.json
+├── front/                # Frontend da aplicação
+│   ├── css/
+│   │   ├── autenticacao/
+│   │   │   ├── cadastro.css
+│   │   │   ├── login.css
+│   │   │   └── senha.css
+│   │   ├── categorias/
+│   │   │   ├── acessorio.css
+│   │   │   ├── headset.css
+│   │   │   ├── monitores.css
+│   │   │   ├── mouse.css
+│   │   │   ├── ofertas.css
+│   │   │   └── teclado.css
+│   │   ├── conta/
+│   │   │   ├── conta.css
+│   │   │   ├── dados.css
+│   │   │   ├── endereco.css
+│   │   │   ├── logout.css
+│   │   │   ├── pagamento.css
+│   │   │   └── pedidos.css
+│   │   ├── pages/
+│   │   │   ├── carrinho.css
+│   │   │   ├── conta.css
+│   │   │   ├── pagamento.css
+│   │   │   └── produto.css
+│   │   └── layout.css
+│   ├── img/              # Imagens e ícones
+│   │   ├── produtos/     # Imagens dos produtos
+│   │   ├── ícones/       # Ícones da interface
+│   │   └── fundos/       # Imagens de fundo
+│   ├── js/
+│   │   ├── core/         # Funcionalidades principais
+│   │   │   ├── autenticacao.js
+│   │   │   ├── busca.js
+│   │   │   ├── carrinho.js
+│   │   │   └── navegacao.js
+│   │   ├── pages/        # Scripts específicos por página
+│   │   │   ├── autenticacao/
+│   │   │   │   ├── cadastro.js
+│   │   │   │   ├── login.js
+│   │   │   │   └── senha.js
+│   │   │   ├── conta/
+│   │   │   │   ├── dados.js
+│   │   │   │   ├── pagamento.js
+│   │   │   │   └── perfil.js
+│   │   │   ├── pedidos/
+│   │   │   │   └── pedidos.js
+│   │   │   └── produto/
+│   │   │       └── produto.js
+│   │   └── api.js        # Comunicação com backend
+│   └── pages/            # Páginas HTML
+│       ├── autenticacao/
+│       │   ├── cadastro.html
+│       │   ├── login.html
+│       │   └── senha.html
+│       ├── carrinho/
+│       │   ├── carrinho.html
+│       │   └── pagamento.html
+│       ├── categorias/
+│       │   ├── acessorios.html
+│       │   ├── headsets.html
+│       │   ├── monitores.html
+│       │   ├── mouses.html
+│       │   ├── ofertas.html
+│       │   └── teclados.html
+│       ├── conta/
+│       │   ├── dados.html
+│       │   ├── enderecos.html
+│       │   ├── formas-pagamento.html
+│       │   ├── logout.html
+│       │   ├── pedidos.html
+│       │   └── perfil.html
+│       ├── index.html    # Página inicial
+│       └── produto.html
+├── .gitignore
+├── LICENSE
+├── README.md
+└── TABELA_SITE_MYSQL.sql # Estrutura do banco de dados
 ```
 
 ## 💻 Arquivos JavaScript
 
-### **carrinho.js**
+### **Core (Funcionalidades Principais)**
+
+#### **autenticacao.js**
+- Gerenciamento de sessões de usuário
+- Validação de tokens
+- Controle de acesso às páginas
+- Redirecionamento automático
+
+#### **carrinho.js**
 - Adição e remoção de produtos
 - Cálculo de totais e subtotais
 - Persistência no localStorage
 - Atualização dinâmica da interface
 
-### **layout.js**
+#### **busca.js**
+- Sistema de busca por produtos
+- Filtros por categoria e preço
+- Sugestões automáticas
+- Resultados em tempo real
+
+#### **navegacao.js**
 - Menu responsivo mobile
-- Sistema de busca
 - Navegação entre páginas
 - Carregamento dinâmico de conteúdo
+- Controle de histórico
 
-### **produto.js**
-- Galeria de imagens interativa
-- Seleção de quantidade
-- Cálculo de parcelamento
-- Integração com carrinho
+### **Pages (Scripts Específicos)**
 
-### **login.js**
-- Validação de formulários
-- Autenticação de usuários
-- Gerenciamento de sessão
-- Redirecionamento pós-login
+#### **Autenticação**
+- **login.js**: Validação e autenticação de usuários
+- **cadastro.js**: Validação de CPF, email e senhas
+- **senha.js**: Recuperação e alteração de senhas
 
-### **cadastro.js**
-- Validação de CPF e email
-- Formatação de campos
-- Verificação de senhas
-- Armazenamento de dados
+#### **Conta do Usuário**
+- **dados.js**: Gerenciamento de dados pessoais
+- **pagamento.js**: Formas de pagamento
+- **perfil.js**: Configurações do perfil
+
+#### **Produtos e Pedidos**
+- **produto.js**: Galeria de imagens e detalhes
+- **pedidos.js**: Histórico e acompanhamento
+
+### **API**
+#### **api.js**
+- Comunicação com o backend
+- Requisições HTTP (GET, POST, PUT, DELETE)
+- Tratamento de erros
+- Interceptadores de requisição
 
 ## 🛠️ Tecnologias Utilizadas
 
+### **Frontend**
 - **HTML5**: Estruturação semântica das páginas
 - **CSS3**: Estilização e design responsivo
-- **JavaScript**: Interatividade e funcionalidades dinâmicas
+- **JavaScript (ES6+)**: Interatividade e funcionalidades dinâmicas
 - **Font Awesome**: Ícones e elementos visuais
+
+### **Backend**
+- **Node.js**: Ambiente de execução JavaScript
+- **Express.js**: Framework web para APIs
+- **MySQL**: Banco de dados relacional
+- **dotenv**: Gerenciamento de variáveis de ambiente
+
+### **Ferramentas**
 - **Git**: Controle de versão
+- **XAMPP**: Servidor local de desenvolvimento
+- **Postman**: Testes de API (desenvolvimento)
 
 ## 💻 Como Executar o Projeto
 
-### Passos para Execução
+### **Pré-requisitos**
+- Node.js (versão 14 ou superior)
+- MySQL (ou XAMPP com MySQL)
+- Navegador web moderno
 
-1. **Clone ou baixe o repositório**
+### **Configuração do Backend**
+
+1. **Clone o repositório**
    ```bash
    git clone https://github.com/davisouzafarias88-art/ProjetoFinal_Senac.git
-   ```
-
-2. **Navegue até a pasta do projeto**
-   ```bash
    cd ProjetoFinal_Senac
    ```
 
-3. **Abra o arquivo principal**
-   - Localize o arquivo `html/layout.html`
-   - Clique duas vezes para abrir no navegador
-   - Ou clique com botão direito → "Abrir com" → Seu navegador preferido
+2. **Configure o banco de dados**
+   - Inicie o XAMPP e ative MySQL
+   - Importe o arquivo `TABELA_SITE_MYSQL.sql` no phpMyAdmin
+   - Crie um banco de dados chamado `techmoon`
 
-4. **Navegação no Site**
-   - **Página Inicial**: `html/layout.html`
-   - **Login**: `html/nav/login.html`
-   - **Cadastro**: `html/nav/Cadastro.html`
+3. **Configure o backend**
+   ```bash
+   cd back
+   npm install
+   ```
+
+4. **Configure as variáveis de ambiente**
+   - Renomeie `.env.example` para `.env` (se existir)
+   - Configure as credenciais do banco de dados
+
+5. **Inicie o servidor**
+   ```bash
+   npm start
+   ```
+
+### **Execução do Frontend**
+
+1. **Abra o arquivo principal**
+   - Navegue até `front/pages/index.html`
+   - Abra no navegador ou use um servidor local
+
+2. **Navegação no Site**
+   - **Página Inicial**: `front/pages/index.html`
+   - **Login**: `front/pages/autenticacao/login.html`
+   - **Cadastro**: `front/pages/autenticacao/cadastro.html`
    - **Produtos**: Navegue pelas categorias no menu
    - **Carrinho**: Ícone do carrinho no header
 
 ### 🔗 Estrutura de Navegação
 ```
-Página Inicial (layout.html)
+Página Inicial (index.html)
 ├── Categorias
 │   ├── Teclados
 │   ├── Mouses
 │   ├── Headsets
-│   └── Acessórios
+│   ├── Monitores
+│   ├── Acessórios
+│   └── Ofertas
 ├── Autenticação
 │   ├── Login
-│   └── Cadastro
+│   ├── Cadastro
+│   └── Recuperar Senha
 ├── Carrinho de Compras
+│   ├── Visualizar Carrinho
+│   └── Finalizar Pagamento
 └── Área do Cliente
+    ├── Perfil
     ├── Meus Dados
     ├── Endereços
     ├── Pedidos
-    └── Formas de Pagamento
+    ├── Formas de Pagamento
+    └── Logout
 ```
 
 ## 👥 Equipe de Desenvolvimento
 
-- **Desenvolvedor Principal no css**: Samuel Gonçalves Dias
+- **Desenvolvedor Principal no css e html**: Samuel Gonçalves Dias
 - **Colaborador na Página de Login e Cadastro**: Davi Souza Farias
+- **Desenvolvedor Principal na API e Backend**:Victor Gabriel Gomes
+- **Auxiliador da API**: Gabriel Alcantara
+- **Documentação**: Giovanna Cristina Da Silva Ribeiro
 - **Instituição**: SENAC DF (903 Sul)
 
 ## 📝 Licença

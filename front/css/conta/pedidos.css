@@ -333,6 +333,23 @@ main .container {
   font-size: 1rem;
 }
 
+.filtros select {
+  background: rgba(51, 51, 51, 0.9);
+  color: white;
+}
+
+.filtros select option {
+  background: #333;
+  color: white;
+  padding: 8px;
+}
+
+.filtros select:focus {
+  outline: none;
+  border-color: #b700ff;
+  box-shadow: 0 0 10px rgba(183, 0, 255, 0.3);
+}
+
 .pedido-card {
   background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
   border-radius: 15px;

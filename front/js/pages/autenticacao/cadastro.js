@@ -4,14 +4,21 @@ document.querySelector('form').addEventListener('submit', (e) => {
     const nome = document.querySelector('#nome_cad input').value;
     const email = document.querySelector('#email_cad input').value;
     const cpf = document.querySelector('#cpf input').value;
+    const endereco = document.querySelector('#end input').value;
+    const cidade = document.querySelector('#cidade_select').value;
+    const cep = document.querySelector('#cep input').value;
     const telefone = document.querySelector('#tel input').value;
     
     sessionStorage.setItem('dadosCadastro', JSON.stringify({
         nome,
         email,
         cpf,
+        endereco,
+        cidade,
+        cep,
         telefone
     }));
     
-    window.location.href = 'senha.html';
+    window.location.href = '/projetofinal/front/pages/autenticacao/senha.html';
 });
+
