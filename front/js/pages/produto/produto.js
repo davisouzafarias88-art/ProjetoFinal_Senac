@@ -241,163 +241,93 @@ const produtos = {
         descricao: 'Microfone gamer Rise Mode com qualidade de estúdio, ideal para streaming, podcasts e gravação de voz. Oferece captação clara e redução de ruído ambiente.'
     },
     // Produtos em oferta
-    'Mouse Gamer RGB Redragon CENTROPHORUS - OFERTA': {
-        nome: 'Mouse Gamer RGB Redragon CENTROPHORUS - OFERTA',
-        preco: '69.99',
-        imagem: '/projetofinal/front/img/Mouse Gamer RGB.png',
-        descricao: 'Mouse gamer Redragon CENTROPHORUS com sensor de 12.000 DPI, 7 botões programáveis e iluminação personalizável. Oferta por tempo limitado.'
+    'Suporte Para Headset Fortrek - OFERTA': {
+        nome: 'Suporte Para Headset Fortrek - OFERTA',
+        preco: '39.90',
+        imagem: '/projetofinal/front/img/Suporte Para Headset Fortrek.png',
+        descricao: 'Suporte para headset Fortrek, ideal para organizar sua mesa e proteger seu fone. Oferta por tempo limitado.'
     },
-    'Teclado Mecânico Switch Blue - OFERTA': {
-        nome: 'Teclado Mecânico Switch Blue - OFERTA',
-        preco: '149.99',
-        imagem: '/projetofinal/front/img/Teclado Mecânico Switch Blue.png',
-        descricao: 'Teclado mecânico Switch Blue com switches Cherry MX, RGB e layout ABNT2. Oferta por tempo limitado.'
+    'Pad Para Teclado Marvo - OFERTA': {
+        nome: 'Pad Para Teclado Marvo - OFERTA',
+        preco: '169.90',
+        imagem: '/projetofinal/front/img/pad.png',
+        descricao: 'Pad para teclado Marvo com superfície otimizada e base antiderrapante. Oferta por tempo limitado.'
     },
-    'Headset Gamer Havit 2015d - OFERTA': {
-        nome: 'Headset Gamer Havit 2015d - OFERTA',
-        preco: '99.99',
-        imagem: '/projetofinal/front/img/Headset Gamer Havit.png',
-        descricao: 'Headset gamer Havit 2015d com som surround 7.1, microfone com cancelamento de ruído. Oferta por tempo limitado.'
+    'Headset Gamer Havit - OFERTA': {
+        nome: 'Headset Gamer Havit - OFERTA',
+        preco: '99.90',
+        imagem: '/projetofinal/front/img/havitt.png',
+        descricao: 'Headset gamer Havit com excelente custo-benefício e som claro. Oferta por tempo limitado.'
     },
-    'Webcam HD - OFERTA': {
-        nome: 'Webcam HD - OFERTA',
+    'Fone de ouvido JBL - OFERTA': {
+        nome: 'Fone de ouvido JBL - OFERTA',
         preco: '279.99',
-        imagem: '/projetofinal/front/img/webcam.png',
-        descricao: 'Webcam Full HD 1080p com foco automático, microfone integrado e qualidade profissional. Oferta por tempo limitado.'
+        imagem: '/projetofinal/front/img/Fone de ouvido JBL.png',
+        descricao: 'Fone de ouvido JBL com qualidade sonora superior. Oferta por tempo limitado.'
     },
-    'Mousepad RGB - OFERTA': {
-        nome: 'Mousepad RGB - OFERTA',
+    'Mouse Bungee Fantech - OFERTA': {
+        nome: 'Mouse Bungee Fantech - OFERTA',
         preco: '49.99',
-        imagem: '/projetofinal/front/img/mousepad.png',
-        descricao: 'Mousepad RGB grande com iluminação nas bordas, base antiderrapante e superfície otimizada. Oferta por tempo limitado.'
+        imagem: '/projetofinal/front/img/Mouse Bungee Fantech.png',
+        descricao: 'Mouse bungee Fantech para melhor gerenciamento do cabo do mouse. Oferta por tempo limitado.'
     },
-    'Monitor Gamer AOC - OFERTA': {
-        nome: 'Monitor Gamer AOC - OFERTA',
-        preco: '799.99',
-        imagem: '/projetofinal/front/img/Monitor AOC.png',
-        descricao: 'Monitor gamer AOC com resolução 2K, 144Hz e tempo de resposta ultra rápido. Oferta por tempo limitado.'
+    'Monitor Gamer Gigabyte - OFERTA': {
+        nome: 'Monitor Gamer Gigabyte - OFERTA',
+        preco: '899.99',
+        imagem: '/projetofinal/front/img/Monitor Gamer Gigabyte.png',
+        descricao: 'Monitor gamer Gigabyte com alta taxa de atualização e imagem fluida. Oferta por tempo limitado.'
     },
 };
 
-// Função para carregar produto da URL
 function carregarProduto() {
-    const parametrosUrl = new URLSearchParams(window.location.search);
-    const nomeProduto = parametrosUrl.get('produto');
+    const nomeProduto = new URLSearchParams(window.location.search).get('produto');
+    const produto = produtos[nomeProduto];
     
-    if (nomeProduto && produtos[nomeProduto]) {
-        const produto = produtos[nomeProduto];
-        
-        // Atualizar elementos da página
-        document.getElementById('produto-titulo').textContent = `${produto.nome} - TechMoon`;
-        document.getElementById('produto-nome').textContent = produto.nome;
-        document.getElementById('produto-preco').textContent = produto.preco;
-        atualizarParcelas(produto.preco);
-        document.getElementById('produto-img').src = produto.imagem;
-        document.getElementById('produto-img').alt = produto.nome;
-        document.getElementById('produto-desc').textContent = produto.descricao;
-
-        
-        // Configurar miniaturas
-        const miniaturas = document.querySelectorAll('.miniatura');
-        const imagemPrincipal = document.getElementById('produto-img');
-        
-        // Imagens alternativas (usando a mesma imagem com variações)
-        const imagens = [
-            produto.imagem,
-            produto.imagem,
-            produto.imagem,
-            produto.imagem,
-            produto.imagem
-        ];
-        
-        miniaturas.forEach((miniatura, index) => {
-            miniatura.src = imagens[index];
-            miniatura.addEventListener('click', function() {
-                imagemPrincipal.src = imagens[index];
-                miniaturas.forEach(m => m.classList.remove('ativa'));
-                this.classList.add('ativa');
-            });
-        });
-        
-        // Configurar botão de adicionar ao carrinho
-        const botaoAdicionar = document.getElementById('botao-adicionar');
-        botaoAdicionar.addEventListener('click', function() {
-            const quantidade = document.getElementById('quantidade').value;
-            adicionarAoCarrinho(produto, quantidade);
-        });
-    } else {
-        // Produto não encontrado, redirecionar para página inicial
-        window.location.href = '/projetofinal/front/pages/index.html';
-    }
+    if (!produto) return window.location.href = '/projetofinal/front/pages/index.html';
+    
+    document.getElementById('produto-titulo').textContent = `${produto.nome} - TechMoon`;
+    document.getElementById('produto-nome').textContent = produto.nome;
+    document.getElementById('produto-preco').textContent = produto.preco;
+    document.getElementById('produto-img').src = produto.imagem;
+    document.getElementById('produto-desc').textContent = produto.descricao;
+    
+    atualizarParcelas(produto.preco);
+    
+    document.querySelectorAll('.miniatura').forEach(m => m.src = produto.imagem);
+    
+    document.getElementById('botao-adicionar').onclick = () => {
+        adicionarAoCarrinho(produto, document.getElementById('quantidade').value);
+    };
 }
 
-// Função para normalizar caminho da imagem
 function normalizarCaminho(caminho) {
-    if (!caminho) return '/projetofinal/front/img/placeholder.png';
-    if (caminho.includes('placeholder')) return caminho;
-    if (caminho.startsWith('http')) return caminho;
-    if (caminho.startsWith('/projetofinal/front/img/')) return caminho;
-    if (caminho.startsWith('/front/img/')) return caminho.replace('/front/img/', '/projetofinal/front/img/');
-    if (caminho.startsWith('../img/')) return caminho.replace('../img/', '/projetofinal/front/img/');
-    if (caminho.startsWith('img/')) return '/projetofinal/front/' + caminho;
-    return '/projetofinal/front/img/' + caminho;
+    if (!caminho || caminho.startsWith('/projetofinal/front/img/')) return caminho || '/projetofinal/front/img/placeholder.png';
+    return caminho.replace(/^(\.\.\/img\/|\/img\/|img\/)/, '/projetofinal/front/img/');
 }
 
-// Função para adicionar produto ao carrinho
 function adicionarAoCarrinho(produto, quantidade) {
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     const qtd = parseInt(quantidade) || 1;
-    const imagemNormalizada = normalizarCaminho(produto.imagem);
+    const item = carrinho.find(i => i.nome === produto.nome);
     
-    const itemExistente = carrinho.find(item => item.nome === produto.nome);
-    
-    if (itemExistente) {
-        itemExistente.quantidade += qtd;
-    } else {
-        carrinho.push({
-            nome: produto.nome,
-            preco: parseFloat(produto.preco),
-            imagem: imagemNormalizada,
-            quantidade: qtd
-        });
-    }
+    if (item) item.quantidade += qtd;
+    else carrinho.push({nome: produto.nome, preco: parseFloat(produto.preco), imagem: produto.imagem, quantidade: qtd});
     
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
-
-    // Feedback visual
-    const botao = document.getElementById('botao-adicionar');
-    const textoOriginal = botao.textContent;
-    botao.textContent = 'Adicionado!';
-    botao.classList.add('produto-adicionado');
     
-    setTimeout(() => {
-        botao.textContent = textoOriginal;
-        botao.classList.remove('produto-adicionado');
-    }, 2000);
+    const botao = document.getElementById('botao-adicionar');
+    botao.textContent = 'Adicionado!';
+    setTimeout(() => botao.textContent = 'Adicionar ao Carrinho', 2000);
 }
 
-// Carregar produto quando a página carregar
 document.addEventListener('DOMContentLoaded', carregarProduto);
 
 function atualizarParcelas(preco) {
     const container = document.getElementById("lista-parcelas");
-    container.innerHTML = ""; // limpar antes de recriar tudo
-
     const precoNum = parseFloat(preco);
-
-    for (let i = 1; i <= 5; i++) {
-        let parcelaSemJuros = precoNum / i;
-
-        const div = document.createElement("div");
-        div.classList.add("parcela");
-
-        if (i === 1) div.classList.add("destaque");
-
-        div.innerHTML = `
-            ${i}x de R$ ${parcelaSemJuros.toFixed(2).replace(".", ",")} 
-            <span>(sem juros)</span>
-        `;
-
-        container.appendChild(div);
-    }
+    
+    container.innerHTML = Array.from({length: 6}, (_, i) => {
+        const parcela = (precoNum / (i + 1)).toFixed(2).replace(".", ",");
+        return `<div class="parcela ${i === 0 ? 'destaque' : ''}">${i + 1}x de R$ ${parcela} <span>(sem juros)</span></div>`;
+    }).join('');
 }

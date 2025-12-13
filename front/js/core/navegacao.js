@@ -1,40 +1,19 @@
-// Função para navegar para página do produto
-function navegarParaProduto(nomeProduto) {
-    // Detectar se está em categorias ou página principal
-    const isCategorias = window.location.pathname.includes('/categorias/');
-    const url = isCategorias 
-        ? `/projetofinal/front/pages/produto.html?produto=${encodeURIComponent(nomeProduto)}`
-        : `/projetofinal/front/pages/produto.html?produto=${encodeURIComponent(nomeProduto)}`;
-    window.location.href = url;
+function navegarParaProduto(nome) {
+    window.location.href = `/projetofinal/front/pages/produto.html?produto=${encodeURIComponent(nome)}`;
 }
 
-// Adicionar event listeners aos produtos quando a página carregar
-document.addEventListener('DOMContentLoaded', function() {
-    const itens = document.querySelectorAll('.item');
-    
-    itens.forEach(item => {
-        // Tornar todo o item clicável
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.item').forEach(item => {
         item.style.cursor = 'pointer';
         
-        // Adicionar evento de clique no item inteiro
-        item.addEventListener('click', function(e) {
-            // Verificar se o clique não foi no botão de adicionar ao carrinho
+        item.onclick = e => {
             if (!e.target.classList.contains('botao-carrinho')) {
-                const nomeProduto = this.getAttribute('data-nome');
-                if (nomeProduto) {
-                    navegarParaProduto(nomeProduto);
-                }
+                const nome = item.getAttribute('data-nome');
+                if (nome) navegarParaProduto(nome);
             }
-        });
+        };
         
-        // Adicionar efeito hover
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.transition = 'transform 0.3s ease';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
+        item.onmouseenter = () => item.style.transform = 'translateY(-5px)';
+        item.onmouseleave = () => item.style.transform = 'translateY(0)';
     });
 });

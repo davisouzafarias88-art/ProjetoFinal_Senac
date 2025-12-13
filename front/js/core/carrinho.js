@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.botao-carrinho').forEach(botao => {
     botao.onclick = function(e) {
       e.preventDefault();
+      e.stopPropagation(); // Impede que o evento se propague para o item pai
+      
       const item = this.closest('.item');
       const nome = item.dataset.nome;
       const preco = item.dataset.preco;
