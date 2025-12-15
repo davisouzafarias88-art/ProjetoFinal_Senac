@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(/projetofinal/front/img/Fundo_senhacadastro.png);
+    background-size: cover;
+    background-position:center;
+    align-items: center;
+}
+
+
+/* ESTA É A CORREÇÃO IMPORTANTE */
+.item img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background-color: #222;
+    border-radius: 10px;
+}
+
+#container{
+    border: 2px solid rgba(255, 255, 255, .2);
+    padding: 30px 40px;
+    border-radius: 20px;
+    background-color: transparent;
+    width: 540px;
+    height: 400px;
+    color: aliceblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+}
+
+#container h1{
+    font-size: 36px;
+    text-align: center;
+}
+
+#senha, #confirmacao{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+
+#senha input, #confirmacao input{
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: white;
+    padding: 20px 45px 20px 20px;
+    border-radius: 40px;
+    border: solid rgba(0, 0, 0, .2);
+}
+
+#senha input::placeholder,
+#confirmacao input::placeholder{
+
+    color: rgba(252, 250, 250, 0.966);
+}
+
+#senha img, #confirmacao img{
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    top: 25%;
+}
+
+
+
+#buttom{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.5s ease;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+
+#buttom:hover{
+    background-color: transparent;
+    color: white;
+    
+}
+
+
+#moon{
+    color: #b700ff;
+}
