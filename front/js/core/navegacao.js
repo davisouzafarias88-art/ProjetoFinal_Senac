@@ -1,5 +1,20 @@
 function navegarParaProduto(nome) {
-    window.location.href = `/projetofinal/front/pages/produto.html?produto=${encodeURIComponent(nome)}`;
+    // Detectar se está na página inicial ou em subpasta
+    const currentPath = window.location.pathname;
+    let produtoUrl;
+    
+    if (currentPath.includes('/pages/index.html') || currentPath.endsWith('/pages/')) {
+        // Está na pasta pages
+        produtoUrl = 'produto.html';
+    } else if (currentPath.includes('/categorias/') || currentPath.includes('/conta/') || currentPath.includes('/carrinho/')) {
+        // Está em subpasta de pages
+        produtoUrl = '../produto.html';
+    } else {
+        // Está na raiz do projeto
+        produtoUrl = 'front/pages/produto.html';
+    }
+    
+    window.location.href = `${produtoUrl}?produto=${encodeURIComponent(nome)}`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {

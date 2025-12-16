@@ -19,6 +19,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
         telefone
     }));
     
-    window.location.href = '/projetofinal/front/pages/autenticacao/senha.html';
+    window.location.href = 'senha.html';
 });
 

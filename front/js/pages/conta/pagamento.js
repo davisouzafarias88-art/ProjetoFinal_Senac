@@ -73,7 +73,7 @@ function finalizarCompra() {
   
   localStorage.removeItem('carrinho');
   alert('Compra realizada com sucesso!');
-  window.location.href = '/projetofinal/front/pages/index.html';
+  window.location.href = '../../index.html';
 }
 
 // Executar quando o DOM estiver carregado

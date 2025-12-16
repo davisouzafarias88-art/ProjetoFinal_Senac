@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
       try {
         const usuario = await loginUsuario(email, senha);
         localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
-        window.location.href = '/projetofinal/front/pages/index.html';
+        window.location.href = '../index.html';
       } catch (error) {
         alert('Erro ao fazer login: ' + error.message);
       }
@@ -30,5 +30,5 @@ function verificarLogin() {
 function fazerLogout() {
   localStorage.removeItem('usuarioLogado');
   localStorage.removeItem('carrinho');
-  window.location.href = '/projetofinal/front/pages/index.html';
+  window.location.href = '../index.html';
 }

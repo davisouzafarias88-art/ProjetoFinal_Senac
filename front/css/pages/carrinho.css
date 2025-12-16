@@ -394,6 +394,44 @@ section {
   box-shadow: 0 8px 25px rgba(183, 0, 255, 0.5);
 }
 
+/* Informações do usuário */
+.info-usuario {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(183, 0, 255, 0.1) 0%, rgba(79, 15, 104, 0.2) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(183, 0, 255, 0.3);
+}
+
+.usuario-logado {
+  text-align: center;
+}
+
+.usuario-logado h2 {
+  color: #b700ff;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.usuario-logado p {
+  color: #ffffff;
+  margin: 5px 0;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.usuario-logado a {
+  color: #b700ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.usuario-logado a:hover {
+  color: #9010c3;
+  text-decoration: underline;
+}
+
   /* ============================================
    FOOTER
    ============================================ */

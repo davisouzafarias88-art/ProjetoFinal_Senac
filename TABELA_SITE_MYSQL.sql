@@ -1,5 +1,6 @@
-CREATE DATABASE IF NOT EXISTS techmoon;
-USE techmoon;
+
+CREATE DATABASE IF NOT EXISTS ecommerce;
+USE ecommerce;
 
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,

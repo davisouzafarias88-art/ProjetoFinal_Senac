@@ -22,7 +22,7 @@ document.querySelector('form').addEventListener('submit', async (e) => {
             delete data.usuario.senha;
             localStorage.setItem('usuarioLogado', JSON.stringify(data.usuario));
             alert('Login realizado com sucesso!');
-            window.location.href = '/projetofinal/front/pages/index.html';
+            window.location.href = '../index.html';
         } else {
             alert(data.error || 'Email ou senha incorretos!');
         }

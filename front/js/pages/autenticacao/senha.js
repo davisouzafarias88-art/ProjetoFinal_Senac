@@ -18,7 +18,7 @@ document.querySelector('form').addEventListener('submit', async (e) => {
     
     if (!dadosCadastro) {
         alert('Dados de cadastro não encontrados.');
-        window.location.href = '/projetofinal/front/pages/autenticacao/cadastro.html';
+        window.location.href = 'cadastro.html';
         return;
     }
     
@@ -37,7 +37,7 @@ document.querySelector('form').addEventListener('submit', async (e) => {
         if (response.ok) {
             sessionStorage.removeItem('dadosCadastro');
             alert('Cadastro realizado com sucesso!');
-            window.location.href = '/projetofinal/front/pages/autenticacao/login.html';
+            window.location.href = 'login.html';
         } else {
             alert('Erro ao cadastrar: ' + (data.error || 'Email já cadastrado'));
         }

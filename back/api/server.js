@@ -10,20 +10,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Debug middleware
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.path}`);
-  next();
-});
-
 // importa as rotas
-try {
-  const routes = require('./routes');
-  app.use('/api', routes);
-  console.log('✅ Rotas carregadas com sucesso!');
-} catch (error) {
-  console.error('❌ Erro ao carregar rotas:', error.message);
-}
+const routes = require('./routes');
+app.use('/api', routes);
 
 // 404 handler
 app.use((req, res) => {

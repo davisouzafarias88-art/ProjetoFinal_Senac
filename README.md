@@ -211,7 +211,7 @@ projetofinal/
 2. **Configure o banco de dados**
    - Inicie o XAMPP e ative MySQL
    - Importe o arquivo `TABELA_SITE_MYSQL.sql` no phpMyAdmin
-   - Crie um banco de dados chamado `techmoon`
+   - Crie um banco de dados chamado `ecommerce`
 
 3. **Configure o backend**
    ```bash

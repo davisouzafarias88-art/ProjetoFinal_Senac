@@ -4,7 +4,7 @@ const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
 if (!usuario) {
     alert('Você precisa estar logado para finalizar a compra!');
-    window.location.href = '/projetofinal/front/pages/autenticacao/login.html';
+    window.location.href = '../autenticacao/login.html';
 }
 
 // Preencher dados pessoais automaticamente
@@ -145,7 +145,7 @@ async function finalizarPedido() {
         localStorage.removeItem('carrinho');
         
         // Redirecionar para página de sucesso ou conta
-        window.location.href = '/projetofinal/front/pages/index.html';
+        window.location.href = '../index.html';
         
     } catch (error) {
         console.error('Erro:', error);

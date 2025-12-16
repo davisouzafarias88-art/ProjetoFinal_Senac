@@ -1,5 +1,5 @@
 // API Configuration
-const API_URL = 'http://localhost:3000';
+const API_URL = 'http://localhost:3002/api';
 
 // Função para fazer requisições
 async function fazerRequisicao(endpoint, opcoes = {}) {
@@ -24,21 +24,24 @@ async function fazerRequisicao(endpoint, opcoes = {}) {
 }
 
 // Usuários
-async function listarUsuarios() {
-  return fazerRequisicao('/usuarios');
-}
-
 async function criarUsuario(dados) {
-  return fazerRequisicao('/usuarios', {
+  return fazerRequisicao('/usuarios/cadastro', {
     method: 'POST',
     body: JSON.stringify(dados)
   });
 }
 
 async function loginUsuario(email, senha) {
-  return fazerRequisicao('/login', {
+  return fazerRequisicao('/usuarios/login', {
     method: 'POST',
     body: JSON.stringify({ email, senha })
+  });
+}
+
+async function alterarSenha(usuarioId, senhaAtual, novaSenha) {
+  return fazerRequisicao(`/usuarios/${usuarioId}/alterar-senha`, {
+    method: 'PUT',
+    body: JSON.stringify({ senhaAtual, novaSenha })
   });
 }
 
@@ -47,36 +50,20 @@ async function listarProdutos() {
   return fazerRequisicao('/produtos');
 }
 
-async function obterProduto(id) {
-  return fazerRequisicao(`/produtos/${id}`);
-}
-
 // Carrinho
 async function adicionarAoCarrinho(usuarioId, produtoId, quantidade) {
-  return fazerRequisicao('/carrinho', {
+  return fazerRequisicao(`/usuarios/${usuarioId}/carrinho`, {
     method: 'POST',
-    body: JSON.stringify({ usuario_id: usuarioId, produto_id: produtoId, quantidade })
+    body: JSON.stringify({ produto_id: produtoId, quantidade })
   });
 }
 
 async function obterCarrinho(usuarioId) {
-  return fazerRequisicao(`/carrinho/${usuarioId}`);
+  return fazerRequisicao(`/usuarios/${usuarioId}/carrinho`);
 }
 
-async function removerDoCarrinho(carrinhoId) {
-  return fazerRequisicao(`/carrinho/${carrinhoId}`, {
+async function removerDoCarrinho(usuarioId, produtoId) {
+  return fazerRequisicao(`/usuarios/${usuarioId}/carrinho/${produtoId}`, {
     method: 'DELETE'
   });
-}
-
-// Pedidos
-async function criarPedido(usuarioId, dados) {
-  return fazerRequisicao('/pedidos', {
-    method: 'POST',
-    body: JSON.stringify({ usuario_id: usuarioId, ...dados })
-  });
-}
-
-async function obterPedidos(usuarioId) {
-  return fazerRequisicao(`/pedidos/${usuarioId}`);
 }
