@@ -1,6 +1,6 @@
 # 🌙 TechMoon - E-commerce de Periféricos
 
-Projeto final do curso desenvolvido para uma loja virtual especializada em periféricos de tecnologia (teclados, mouses, headsets e acessórios).
+Projeto final do curso desenvolvido para uma loja virtual especializada em periféricos de tecnologia (monitores,teclados, mouses, headsets e acessórios).
 
 ## 📋 Sobre o Projeto
 
